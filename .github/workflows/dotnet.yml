@@ -19,8 +19,8 @@ jobs:
       run: dotnet restore --packages ./allPackages
     - name: Build in Release mode
       run: dotnet build --no-restore --configuration Release
-    - name: TestDotMemoryUnit
-      run: allPackages\jetbrains.dotmemoryunit\3.2.20220510\lib\tools\dotMemoryUnit.exe "C:\Program Files\dotnet\dotnet.exe" --propagate-exit-code -- test "HomeWork13\Hw13Tests\bin\Release\net6.0\Hw13Tests.dll" 
+#    - name: TestDotMemoryUnit
+#      run: allPackages\jetbrains.dotmemoryunit\3.2.20220510\lib\tools\dotMemoryUnit.exe "C:\Program Files\dotnet\dotnet.exe" --propagate-exit-code -- test "HomeWork13\Hw13Tests\bin\Release\net6.0\Hw13Tests.dll"
     - name: Restore dependencies
       run: dotnet restore
     - name: Build in Debug mode
