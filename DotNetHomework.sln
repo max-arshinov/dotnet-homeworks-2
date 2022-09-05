@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hw1Tests", "HomeWork1\Hw1.T
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Homework 1", "Homework 1", "{489B9530-1E81-44F1-B026-B42879A56CF4}"
 	ProjectSection(SolutionItems) = preProject
-		HomeWork1\HW1.md = HomeWork1\HW1.md
+		HomeWork1\README.md = HomeWork1\README.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "actions", "actions", "{82BA388F-4AE2-43A2-965A-AC2092BF26F3}"
