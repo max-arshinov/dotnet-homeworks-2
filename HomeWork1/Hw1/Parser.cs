@@ -7,13 +7,34 @@ public static class Parser
         out CalculatorOperation operation, 
         out double val2)
     {
-        throw new NotImplementedException();
+        if (!IsArgLengthSupported(args))
+            throw new ArgumentException();
+        try
+        {
+            val1 = double.Parse(args[0]);
+            val2 = double.Parse(args[2]);
+        }
+        catch (FormatException)
+        {
+            throw new ArgumentException();
+        }
+        operation = ParseOperation(args[1]);
+        if (operation == CalculatorOperation.Undefined)
+            throw new InvalidOperationException();
     }
 
     private static bool IsArgLengthSupported(string[] args) => args.Length == 3;
 
     private static CalculatorOperation ParseOperation(string arg)
     {
-        throw new NotImplementedException();
+        if (arg == "+")
+            return CalculatorOperation.Plus;
+        else if (arg == "-")
+            return CalculatorOperation.Minus;
+        else if (arg == "*")
+            return CalculatorOperation.Multiply;
+        else if (arg == "/")
+            return CalculatorOperation.Divide;
+        else return CalculatorOperation.Undefined;
     }
 }

@@ -1,5 +1,4 @@
 namespace Hw1;
-
 public static class Calculator
 {
     public static double Calculate(double value1, CalculatorOperation operation, double value2)
@@ -13,4 +12,4 @@ public static class Calculator
             _ => throw new ArgumentOutOfRangeException()
         };
     }
-}
+} 
