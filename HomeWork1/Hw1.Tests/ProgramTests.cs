@@ -9,7 +9,7 @@ namespace Hw1Tests
         [Theory]
         [InlineData(new []{ "15", "+", "5" }, 20)]
         [InlineData(new []{ "15", "/", "3" }, 5)]
-        [InlineData(new []{ "15,5", "-", "0,5" }, 15)]
+        [InlineData(new []{ "15", "-", "5" }, 10)]
         public void ProgramTestValidData(string[] args, double expected)
         {
             Program.Main(args);
