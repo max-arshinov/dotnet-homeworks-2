@@ -2,9 +2,9 @@ name: .NET
 
 on:
   push:
-    branches: master
+    branches: "*"
   pull_request:
-    branches: master
+    branches: "*"
 
 jobs:
   build:
@@ -36,4 +36,4 @@ jobs:
         if: success() || failure()
         with:
           name: test-results
-          path: HomeWork*/Hw*Tests/TestResults/*.trx
+          path: Homework*/Hw*Tests/TestResults/*.trx
