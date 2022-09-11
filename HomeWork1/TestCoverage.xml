@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SolutionRoot CoveredStatements="24" TotalStatements="71" CoveragePercent="34" ReportType="Xml" DotCoverVersion="2022.2.2">
+  <SolutionFolder Name="Homework 1" CoveredStatements="24" TotalStatements="71" CoveragePercent="34">
+    <Project Name="Hw1" CoveredStatements="24" TotalStatements="29" CoveragePercent="83">
+      <Namespace Name="Hw1" CoveredStatements="24" TotalStatements="24" CoveragePercent="100">
+        <Type Name="Calculator" CoveredStatements="8" TotalStatements="8" CoveragePercent="100">
+          <Method Name="Calculate(double,CalculatorOperation,double):double" CoveredStatements="8" TotalStatements="8" CoveragePercent="100" />
+        </Type>
+        <Type Name="Parser" CoveredStatements="16" TotalStatements="16" CoveragePercent="100">
+          <Method Name="IsArgLengthSupported(string[]):bool" CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
+          <Method Name="ParseCalcArguments(string[],out double,out CalculatorOperation,out double):void" CoveredStatements="7" TotalStatements="7" CoveragePercent="100" />
+          <Method Name="ParseOperation(string):CalculatorOperation" CoveredStatements="8" TotalStatements="8" CoveragePercent="100" />
+        </Type>
+      </Namespace>
+      <Type Name="Program" CoveredStatements="0" TotalStatements="5" CoveragePercent="0">
+        <Method Name="&lt;Main&gt;$(string[]):void" CoveredStatements="0" TotalStatements="5" CoveragePercent="0" />
+      </Type>
+    </Project>
+    <Project Name="Hw1.Tests" CoveredStatements="0" TotalStatements="42" CoveragePercent="0">
+      <Namespace Name="Hw1Tests" CoveredStatements="0" TotalStatements="42" CoveragePercent="0">
+        <Type Name="CalculatorTests" CoveredStatements="0" TotalStatements="20" CoveragePercent="0">
+          <Method Name="TestAllOperations(int,int,CalculatorOperation,int):void" CoveredStatements="0" TotalStatements="4" CoveragePercent="0" />
+          <Method Name="TestDividingNonZeroByZero():void" CoveredStatements="0" TotalStatements="4" CoveragePercent="0" />
+          <Method Name="TestDividingZeroByNonZero():void" CoveredStatements="0" TotalStatements="4" CoveragePercent="0" />
+          <Method Name="TestDividingZeroByZero():void" CoveredStatements="0" TotalStatements="4" CoveragePercent="0" />
+          <Method Name="TestInvalidOperation():void" CoveredStatements="0" TotalStatements="4" CoveragePercent="0">
+            <OwnCoverage CoveredStatements="0" TotalStatements="3" CoveragePercent="0" />
+            <AnonymousMethod Name="():object" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          </Method>
+        </Type>
+        <Type Name="ParserTests" CoveredStatements="0" TotalStatements="22" CoveragePercent="0">
+          <Method Name="TestCorrectOperations(string,CalculatorOperation):void" CoveredStatements="0" TotalStatements="7" CoveragePercent="0" />
+          <Method Name="TestParserWrongLength():void" CoveredStatements="0" TotalStatements="5" CoveragePercent="0">
+            <OwnCoverage CoveredStatements="0" TotalStatements="4" CoveragePercent="0" />
+            <AnonymousMethod Name="():void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          </Method>
+          <Method Name="TestParserWrongOperation():void" CoveredStatements="0" TotalStatements="5" CoveragePercent="0">
+            <OwnCoverage CoveredStatements="0" TotalStatements="4" CoveragePercent="0" />
+            <AnonymousMethod Name="():void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          </Method>
+          <Method Name="TestParserWrongValues(string,string,string):void" CoveredStatements="0" TotalStatements="5" CoveragePercent="0">
+            <OwnCoverage CoveredStatements="0" TotalStatements="4" CoveragePercent="0" />
+            <AnonymousMethod Name="():void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          </Method>
+        </Type>
+      </Namespace>
+    </Project>
+  </SolutionFolder>
+</SolutionRoot>

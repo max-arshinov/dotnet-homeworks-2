@@ -2,9 +2,9 @@ name: .NET
 
 on:
   push:
-    branches: master
+    branches: "**"
   pull_request:
-    branches: master
+    branches: "**"
 
 jobs:
   build:
@@ -15,20 +15,16 @@ jobs:
       uses: actions/setup-dotnet@v2
       with:
         dotnet-version: 6.0.x
-    - name: Restore dependencies for dotMemoryUnit
-      run: dotnet restore --packages ./allPackages
-    - name: Build in Release mode
-      run: dotnet build --no-restore --configuration Release
-    - name: TestDotMemoryUnit
-      run: allPackages\jetbrains.dotmemoryunit\3.2.20220510\lib\tools\dotMemoryUnit.exe "C:\Program Files\dotnet\dotnet.exe" --propagate-exit-code -- test "HomeWork13\Hw13Tests\bin\Release\net6.0\Hw13Tests.dll" 
     - name: Restore dependencies
       run: dotnet restore
     - name: Build in Debug mode
       run: dotnet build --no-restore
     - name: Test
-      run: dotnet test --filter FullyQualifiedName!~Hw13Tests --no-build --verbosity normal --collect:"XPlat Code Coverage" --settings .github/coverlet.runsettings 
+      run: dotnet test --filter FullyQualifiedName!~Hw13Tests --no-build --verbosity normal --collect:"XPlat Code Coverage" --settings .github/coverlet.runsettings
     - name: Codecov
       uses: codecov/codecov-action@v3.1.0
+      with:
+	file: HomeWork1/TestCoverage.xml
 
 
   test:
