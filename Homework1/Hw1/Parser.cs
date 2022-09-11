@@ -20,7 +20,7 @@ public static class Parser
 
     }
 
-    private static bool IsArgLengthSupported(string[] args) => args.Length == 3;
+    
 
 
     private static CalculatorOperation ParseOperation(string arg)
