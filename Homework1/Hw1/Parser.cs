@@ -7,27 +7,23 @@ public static class Parser
         out CalculatorOperation operation, 
         out double val2)
     {
-        if (IsArgLengthSupported(args) == false) throw new ArgumentException();
-        val1 = double.TryParse(args[0], out var sd) ? sd : throw new ArgumentException();
+        if (IsArgLengthSupported(args) == false) throw new ArgumentException("Программа не распознает больше 3 входных данных");
+        val1 = double.TryParse(args[0], out var sd) ? sd : throw new ArgumentException("Данные введены некорректно");
         operation = ParseOperation(args[1]);
-        val2 = double.TryParse(args[2], out var cs) ? cs : throw new ArgumentException();
+        val2 = double.TryParse(args[2], out var cs) ? cs : throw new ArgumentException("Данные введены некорректно");
     }
 
     private static bool IsArgLengthSupported(string[] args) => args.Length == 3;
 
     private static CalculatorOperation ParseOperation(string arg)
     {
-        switch (arg)
+        return arg switch
         {
-            case "+":
-                return CalculatorOperation.Plus;
-            case "-":
-                return CalculatorOperation.Minus;
-            case "/":
-                return CalculatorOperation.Divide;
-            case "*":
-                return CalculatorOperation.Multiply;
-            default: throw new InvalidOperationException();
-        }
+            "+" => CalculatorOperation.Plus,
+            "-" => CalculatorOperation.Minus,
+            "/" => CalculatorOperation.Divide,
+            "*" => CalculatorOperation.Multiply,
+            _ => throw new InvalidOperationException("Данная операция не распознается программой");
+        };
     }
 }
