@@ -1,4 +1,5 @@
 namespace Hw1;
+using System.Globalization;
 
 public static class Parser
 {
@@ -9,7 +10,7 @@ public static class Parser
     {
         operation = ParseOperation(args[1]);
         if (args == null || !IsArgLengthSupported(args) 
-            || !double.TryParse(args[0], out val1) || !double.TryParse(args[2], out val2))
+            || !double.TryParse(args[0],out val1) || !double.TryParse(args[2], out val2))
             throw new ArgumentException();
 
         else if (operation == CalculatorOperation.Undefined)
