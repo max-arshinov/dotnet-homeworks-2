@@ -24,7 +24,7 @@ jobs:
       - name: Codecov
         uses: codecov/codecov-action@v3.1.0
 	with:
-            file: HomeWork1/TestCoverage.xml
+            file: Homework1/TestCoverage.xml
 
   test:
     runs-on: ubuntu-latest
