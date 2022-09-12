@@ -23,8 +23,8 @@ jobs:
         run: dotnet test --filter FullyQualifiedName!~Hw13Tests --no-build --verbosity normal --collect:"XPlat Code Coverage" --settings .github/coverlet.runsettings
       - name: Codecov
         uses: codecov/codecov-action@v3.1.0
-	with:
-            file: Homework1/TestCoverage.xml
+        with:
+            file: HomeWork1/TestCoverage.xml
 
   test:
     runs-on: ubuntu-latest
