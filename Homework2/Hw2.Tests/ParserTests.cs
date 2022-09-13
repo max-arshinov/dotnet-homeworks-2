@@ -12,28 +12,48 @@ namespace Hw2Tests
         [InlineData("/", CalculatorOperation.Divide)]
         public void TestCorrectOperations(string operation, CalculatorOperation operationExpected)
         {
-            throw new NotImplementedException();
+            var p = Parser.GetOperation(operation);
+
+            Assert.Equal(operationExpected, p);
         }
-        
+
+        [Fact]
+        public void TestParserWrongOperation()
+        {
+            var p = Parser.GetOperation(";';qsdas");
+
+            Assert.Equal(CalculatorOperation.Undefined, p);
+        }
+
         [Theory]
         [InlineData("f", "+", "3")]
         [InlineData("3", "+", "f")]
         [InlineData("a", "+", "f")]
         public void TestParserWrongValues(string val1, string operation, string val2)
         {
-            throw new NotImplementedException();
-        }
-        
-        [Fact]
-        public void TestParserWrongOperation()
-        {
-            throw new NotImplementedException();
+            Assert.Throws<ArgumentException>(
+                () =>
+                {
+                    Parser.ParseCalcArguments(
+                        new[] { val1, operation, val2 },
+                        out _,
+                        out _,
+                        out _);
+                });
         }
 
         [Fact]
         public void TestParserWrongLength()
         {
-            throw new NotImplementedException();
+            Assert.Throws<ArgumentException>(
+                () =>
+                {
+                    Parser.ParseCalcArguments(
+                        new[] { "12", "e", "2", "3" },
+                        out _,
+                        out _,
+                        out _);
+                });
         }
     }
 }

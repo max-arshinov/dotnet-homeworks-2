@@ -12,31 +12,38 @@ namespace Hw2Tests
         [InlineData(15, 5, CalculatorOperation.Divide, 3)]
         public void TestAllOperations(int value1, int value2, CalculatorOperation operation, int expectedValue)
         {
-            throw new NotImplementedException();
+            var res = Calculator.Calculate(value1, value2, operation);
+
+            Assert.Equal(expectedValue, res);
         }
-        
+
         [Fact]
         public void TestInvalidOperation()
         {
-            throw new NotImplementedException();
+            Assert.Throws<InvalidOperationException>(
+                () => Calculator.Calculate(1, 2, CalculatorOperation.Undefined));
         }
 
         [Fact]
         public void TestDividingNonZeroByZero()
         {
-            throw new NotImplementedException();
+            Assert.Throws<DivideByZeroException>(
+                () => Calculator.Calculate(1, 0, CalculatorOperation.Divide));
         }
 
         [Fact]
         public void TestDividingZeroByNonZero()
         {
-            throw new NotImplementedException();
+            var res = Calculator.Calculate(0, 1, CalculatorOperation.Divide);
+
+            Assert.Equal(0, res);
         }
-        
+
         [Fact]
         public void TestDividingZeroByZero()
         {
-            throw new NotImplementedException();
+            Assert.Throws<DivideByZeroException>(
+                () => Calculator.Calculate(1, 0, CalculatorOperation.Divide));
         }
     }
 }
