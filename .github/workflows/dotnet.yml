@@ -39,3 +39,7 @@ jobs:
         with:
           name: test-results
           path: Homework1/Hw1.Tests/TestCoverage.xml
+
+$ProgressPreference = 'SilentlyContinue'
+Invoke-WebRequest -Uri https://uploader.codecov.io/latest/windows/codecov.exe -Outfile codecov.exe
+.\codecov.exe
