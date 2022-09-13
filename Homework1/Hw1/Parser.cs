@@ -15,9 +15,8 @@ public static class Parser
 
     private static bool IsArgLengthSupported(string[] args) => args.Length == 3;
 
-    private static CalculatorOperation ParseOperation(string arg)
-    {
-        return arg switch
+    private static CalculatorOperation ParseOperation(string arg) =>
+        arg switch
         {
             "+" => CalculatorOperation.Plus,
             "-" => CalculatorOperation.Minus,
@@ -25,5 +24,4 @@ public static class Parser
             "*" => CalculatorOperation.Multiply,
             _ => throw new InvalidOperationException("Данная операция не распознается программой"),
         };
-    }
 }
