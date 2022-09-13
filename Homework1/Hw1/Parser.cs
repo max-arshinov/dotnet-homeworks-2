@@ -8,12 +8,13 @@ public static class Parser
         out CalculatorOperation operation, 
         out double val2)
     {
-        operation = ParseOperation(args[1]);
+        
         if (args == null || !IsArgLengthSupported(args) 
             || !double.TryParse(args[0],out val1) || !double.TryParse(args[2], out val2))
             throw new ArgumentException();
 
-        else if (operation == CalculatorOperation.Undefined)
+        operation = ParseOperation(args[1]);
+        if (operation == CalculatorOperation.Undefined)
             throw new InvalidOperationException();
     }
 
