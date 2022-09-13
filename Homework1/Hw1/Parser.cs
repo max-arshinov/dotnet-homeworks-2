@@ -23,7 +23,7 @@ public static class Parser
             "-" => CalculatorOperation.Minus,
             "/" => CalculatorOperation.Divide,
             "*" => CalculatorOperation.Multiply,
-            _ => throw new InvalidOperationException("Данная операция не распознается программой");
+            _ => throw new InvalidOperationException("Данная операция не распознается программой"),
         };
     }
 }
