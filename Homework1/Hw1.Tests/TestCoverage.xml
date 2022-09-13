@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Root CoveredStatements="0" TotalStatements="75" CoveragePercent="0" ReportType="DetailedXml" DotCoverVersion="2022.2.2">
+  <FileIndices>
+    <File Index="1" Name="D:\git\dotnet-homeworks-2\HomeWork1\Hw1.Tests\CalculatorTests.cs" ChecksumAlgorithm="SHA256" Checksum="E1A951BC08E35280FA7A7FB93A4A6383BCD36142B8615707404FEE5115593348" />
+    <File Index="2" Name="D:\git\dotnet-homeworks-2\HomeWork1\Hw1.Tests\ParserTests.cs" ChecksumAlgorithm="SHA256" Checksum="1C885081B50B2A7B8F7ACA24906926A8923A19BA0A60B628209660E24233D9ED" />
+    <File Index="3" Name="C:\Users\komp\.nuget\packages\microsoft.net.test.sdk\16.11.0\build\netcoreapp2.1\Microsoft.NET.Test.Sdk.Program.cs" ChecksumAlgorithm="SHA256" Checksum="D66F12F9433816A8C7DC1B2ACB9E1010F5418F5EEB51E80F1DF57AA1DCAB8D8A" />
+    <File Index="4" Name="D:\git\dotnet-homeworks-2\HomeWork1\Hw1.Tests\obj\Debug\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" ChecksumAlgorithm="SHA256" Checksum="9203CF07D36B1AA135DA4A5F86286F34432156CBAF6518C2909849EB7D577381" />
+    <File Index="5" Name="D:\git\dotnet-homeworks-2\HomeWork1\Hw1.Tests\obj\Debug\net6.0\Hw1.Tests.AssemblyInfo.cs" ChecksumAlgorithm="SHA256" Checksum="224659F538918C825CFD89E449ADF8CE926E2ADE2257E5FFE3DC2D466C2CDD48" />
+    <File Index="6" Name="D:\git\dotnet-homeworks-2\HomeWork1\Hw1\Calculator.cs" ChecksumAlgorithm="SHA256" Checksum="B824F3AE147D4C65E5E98845526C9BFB9A7E7DE18A6B78BE98FA011AD6B68513" />
+    <File Index="7" Name="D:\git\dotnet-homeworks-2\HomeWork1\Hw1\CalculatorOperation.cs" ChecksumAlgorithm="SHA256" Checksum="8EFD5AEB43902BC35E5E459120C3677C26B78FA097F254406571E44E8FBC99BD" />
+    <File Index="8" Name="D:\git\dotnet-homeworks-2\HomeWork1\Hw1\Parser.cs" ChecksumAlgorithm="SHA256" Checksum="1553246A966F87500EA36F3B8F07D46759553D0E9364036CB0CCA75C1FF29DFF" />
+    <File Index="9" Name="D:\git\dotnet-homeworks-2\HomeWork1\Hw1\Program.cs" ChecksumAlgorithm="SHA256" Checksum="4263B234F79631C377664DF96893EC2BECD0D87CCA1BA596196AD199930A8515" />
+    <File Index="10" Name="D:\git\dotnet-homeworks-2\HomeWork1\Hw1\obj\Debug\net6.0\Hw1.GlobalUsings.g.cs" ChecksumAlgorithm="SHA256" Checksum="F3F134E9E825E3E7268090F58B1AF2BDA2DE513F61A09C56F48B9B8D08612ABC" />
+    <File Index="11" Name="D:\git\dotnet-homeworks-2\HomeWork1\Hw1\obj\Debug\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" ChecksumAlgorithm="SHA256" Checksum="9203CF07D36B1AA135DA4A5F86286F34432156CBAF6518C2909849EB7D577381" />
+    <File Index="12" Name="D:\git\dotnet-homeworks-2\HomeWork1\Hw1\obj\Debug\net6.0\Hw1.AssemblyInfo.cs" ChecksumAlgorithm="SHA256" Checksum="DBD43A540C6D5D412DE1CD8A174DCC7DF12AC0E5BC5EDA09A98254B985B3834F" />
+  </FileIndices>
+  <Assembly Name="Hw1" CoveredStatements="0" TotalStatements="33" CoveragePercent="0">
+    <Namespace Name="Hw1" CoveredStatements="0" TotalStatements="28" CoveragePercent="0">
+      <Type Name="Calculator" CoveredStatements="0" TotalStatements="8" CoveragePercent="0">
+        <Method Name="Calculate(System.Double,Hw1.CalculatorOperation,System.Double):System.Double" CoveredStatements="0" TotalStatements="8" CoveragePercent="0">
+          <Statement FileIndex="6" Line="6" Column="5" EndLine="6" EndColumn="6" Covered="False" />
+          <Statement FileIndex="6" Line="7" Column="9" EndLine="14" EndColumn="11" Covered="False" />
+          <Statement FileIndex="6" Line="9" Column="41" EndLine="9" EndColumn="56" Covered="False" />
+          <Statement FileIndex="6" Line="10" Column="42" EndLine="10" EndColumn="57" Covered="False" />
+          <Statement FileIndex="6" Line="11" Column="45" EndLine="11" EndColumn="60" Covered="False" />
+          <Statement FileIndex="6" Line="12" Column="43" EndLine="12" EndColumn="58" Covered="False" />
+          <Statement FileIndex="6" Line="13" Column="18" EndLine="13" EndColumn="57" Covered="False" />
+          <Statement FileIndex="6" Line="15" Column="5" EndLine="15" EndColumn="6" Covered="False" />
+        </Method>
+      </Type>
+      <Type Name="Parser" CoveredStatements="0" TotalStatements="20" CoveragePercent="0">
+        <Method Name="IsArgLengthSupported(System.String[]):System.Boolean" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="8" Line="24" Column="64" EndLine="24" EndColumn="80" Covered="False" />
+        </Method>
+        <Method Name="ParseCalcArguments(System.String[],System.Double,Hw1.CalculatorOperation,System.Double):System.Void" CoveredStatements="0" TotalStatements="11" CoveragePercent="0">
+          <Statement FileIndex="8" Line="9" Column="5" EndLine="9" EndColumn="6" Covered="False" />
+          <Statement FileIndex="8" Line="10" Column="9" EndLine="10" EndColumn="41" Covered="False" />
+          <Statement FileIndex="8" Line="11" Column="13" EndLine="11" EndColumn="43" Covered="False" />
+          <Statement FileIndex="8" Line="13" Column="9" EndLine="13" EndColumn="65" Covered="False" />
+          <Statement FileIndex="8" Line="14" Column="9" EndLine="14" EndColumn="28" Covered="False" />
+          <Statement FileIndex="8" Line="15" Column="13" EndLine="15" EndColumn="43" Covered="False" />
+          <Statement FileIndex="8" Line="17" Column="9" EndLine="17" EndColumn="65" Covered="False" />
+          <Statement FileIndex="8" Line="18" Column="9" EndLine="18" EndColumn="28" Covered="False" />
+          <Statement FileIndex="8" Line="19" Column="13" EndLine="19" EndColumn="43" Covered="False" />
+          <Statement FileIndex="8" Line="21" Column="9" EndLine="21" EndColumn="45" Covered="False" />
+          <Statement FileIndex="8" Line="22" Column="5" EndLine="22" EndColumn="6" Covered="False" />
+        </Method>
+        <Method Name="ParseOperation(System.String):Hw1.CalculatorOperation" CoveredStatements="0" TotalStatements="8" CoveragePercent="0">
+          <Statement FileIndex="8" Line="27" Column="5" EndLine="27" EndColumn="6" Covered="False" />
+          <Statement FileIndex="8" Line="28" Column="9" EndLine="28" EndColumn="21" Covered="False" />
+          <Statement FileIndex="8" Line="31" Column="17" EndLine="31" EndColumn="49" Covered="False" />
+          <Statement FileIndex="8" Line="33" Column="17" EndLine="33" EndColumn="50" Covered="False" />
+          <Statement FileIndex="8" Line="35" Column="17" EndLine="35" EndColumn="53" Covered="False" />
+          <Statement FileIndex="8" Line="37" Column="17" EndLine="37" EndColumn="51" Covered="False" />
+          <Statement FileIndex="8" Line="39" Column="17" EndLine="39" EndColumn="55" Covered="False" />
+          <Statement FileIndex="8" Line="41" Column="5" EndLine="41" EndColumn="6" Covered="False" />
+        </Method>
+      </Type>
+    </Namespace>
+    <Type Name="Program" CoveredStatements="0" TotalStatements="5" CoveragePercent="0">
+      <Method Name="&lt;Main&gt;$(System.String[]):System.Void" CoveredStatements="0" TotalStatements="5" CoveragePercent="0">
+        <Statement FileIndex="9" Line="1" Column="1" EndLine="1" EndColumn="20" Covered="False" />
+        <Statement FileIndex="9" Line="2" Column="1" EndLine="2" EndColumn="25" Covered="False" />
+        <Statement FileIndex="9" Line="3" Column="1" EndLine="3" EndColumn="20" Covered="False" />
+        <Statement FileIndex="9" Line="6" Column="1" EndLine="6" EndColumn="38" Covered="False" />
+        <Statement FileIndex="9" Line="7" Column="1" EndLine="7" EndColumn="27" Covered="False" />
+      </Method>
+    </Type>
+  </Assembly>
+  <Assembly Name="Hw1.Tests" CoveredStatements="0" TotalStatements="42" CoveragePercent="0">
+    <Namespace Name="Hw1Tests" CoveredStatements="0" TotalStatements="42" CoveragePercent="0">
+      <Type Name="CalculatorTests" CoveredStatements="0" TotalStatements="20" CoveragePercent="0">
+        <Type Name="&lt;&gt;c" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Method Name="&lt;TestInvalidOperation&gt;b__1_0():System.Object" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+            <Statement FileIndex="1" Line="27" Column="62" EndLine="27" EndColumn="120" Covered="False" />
+          </Method>
+        </Type>
+        <Method Name="TestAllOperations(System.Int32,System.Int32,Hw1.CalculatorOperation,System.Int32):System.Void" CoveredStatements="0" TotalStatements="4" CoveragePercent="0">
+          <Statement FileIndex="1" Line="15" Column="9" EndLine="15" EndColumn="10" Covered="False" />
+          <Statement FileIndex="1" Line="17" Column="13" EndLine="17" EndColumn="74" Covered="False" />
+          <Statement FileIndex="1" Line="20" Column="13" EndLine="20" EndColumn="49" Covered="False" />
+          <Statement FileIndex="1" Line="21" Column="9" EndLine="21" EndColumn="10" Covered="False" />
+        </Method>
+        <Method Name="TestDividingNonZeroByZero():System.Void" CoveredStatements="0" TotalStatements="4" CoveragePercent="0">
+          <Statement FileIndex="1" Line="32" Column="9" EndLine="32" EndColumn="10" Covered="False" />
+          <Statement FileIndex="1" Line="34" Column="13" EndLine="34" EndColumn="82" Covered="False" />
+          <Statement FileIndex="1" Line="37" Column="13" EndLine="37" EndColumn="37" Covered="False" />
+          <Statement FileIndex="1" Line="38" Column="9" EndLine="38" EndColumn="10" Covered="False" />
+        </Method>
+        <Method Name="TestDividingZeroByNonZero():System.Void" CoveredStatements="0" TotalStatements="4" CoveragePercent="0">
+          <Statement FileIndex="1" Line="42" Column="9" EndLine="42" EndColumn="10" Covered="False" />
+          <Statement FileIndex="1" Line="44" Column="13" EndLine="44" EndColumn="82" Covered="False" />
+          <Statement FileIndex="1" Line="47" Column="13" EndLine="47" EndColumn="59" Covered="False" />
+          <Statement FileIndex="1" Line="48" Column="9" EndLine="48" EndColumn="10" Covered="False" />
+        </Method>
+        <Method Name="TestDividingZeroByZero():System.Void" CoveredStatements="0" TotalStatements="4" CoveragePercent="0">
+          <Statement FileIndex="1" Line="52" Column="9" EndLine="52" EndColumn="10" Covered="False" />
+          <Statement FileIndex="1" Line="54" Column="13" EndLine="54" EndColumn="81" Covered="False" />
+          <Statement FileIndex="1" Line="57" Column="13" EndLine="57" EndColumn="46" Covered="False" />
+          <Statement FileIndex="1" Line="58" Column="9" EndLine="58" EndColumn="10" Covered="False" />
+        </Method>
+        <Method Name="TestInvalidOperation():System.Void" CoveredStatements="0" TotalStatements="3" CoveragePercent="0">
+          <Statement FileIndex="1" Line="25" Column="9" EndLine="25" EndColumn="10" Covered="False" />
+          <Statement FileIndex="1" Line="27" Column="13" EndLine="27" EndColumn="122" Covered="False" />
+          <Statement FileIndex="1" Line="28" Column="9" EndLine="28" EndColumn="10" Covered="False" />
+        </Method>
+      </Type>
+      <Type Name="ParserTests" CoveredStatements="0" TotalStatements="22" CoveragePercent="0">
+        <Type Name="&lt;&gt;c__DisplayClass1_0" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Method Name="&lt;TestParserWrongValues&gt;b__0():System.Void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+            <Statement FileIndex="2" Line="38" Column="52" EndLine="38" EndColumn="104" Covered="False" />
+          </Method>
+        </Type>
+        <Type Name="&lt;&gt;c__DisplayClass2_0" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Method Name="&lt;TestParserWrongOperation&gt;b__0():System.Void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+            <Statement FileIndex="2" Line="48" Column="60" EndLine="48" EndColumn="112" Covered="False" />
+          </Method>
+        </Type>
+        <Type Name="&lt;&gt;c__DisplayClass3_0" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Method Name="&lt;TestParserWrongLength&gt;b__0():System.Void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+            <Statement FileIndex="2" Line="58" Column="52" EndLine="58" EndColumn="104" Covered="False" />
+          </Method>
+        </Type>
+        <Method Name="TestCorrectOperations(System.String,Hw1.CalculatorOperation):System.Void" CoveredStatements="0" TotalStatements="7" CoveragePercent="0">
+          <Statement FileIndex="2" Line="15" Column="9" EndLine="15" EndColumn="10" Covered="False" />
+          <Statement FileIndex="2" Line="17" Column="13" EndLine="17" EndColumn="55" Covered="False" />
+          <Statement FileIndex="2" Line="20" Column="13" EndLine="20" EndColumn="98" Covered="False" />
+          <Statement FileIndex="2" Line="23" Column="13" EndLine="23" EndColumn="36" Covered="False" />
+          <Statement FileIndex="2" Line="24" Column="13" EndLine="24" EndColumn="62" Covered="False" />
+          <Statement FileIndex="2" Line="25" Column="13" EndLine="25" EndColumn="35" Covered="False" />
+          <Statement FileIndex="2" Line="26" Column="9" EndLine="26" EndColumn="10" Covered="False" />
+        </Method>
+        <Method Name="TestParserWrongLength():System.Void" CoveredStatements="0" TotalStatements="4" CoveragePercent="0">
+          <Statement FileIndex="2" Line="53" Column="9" EndLine="53" EndColumn="10" Covered="False" />
+          <Statement FileIndex="2" Line="55" Column="13" EndLine="55" EndColumn="53" Covered="False" />
+          <Statement FileIndex="2" Line="58" Column="13" EndLine="58" EndColumn="106" Covered="False" />
+          <Statement FileIndex="2" Line="59" Column="9" EndLine="59" EndColumn="10" Covered="False" />
+        </Method>
+        <Method Name="TestParserWrongOperation():System.Void" CoveredStatements="0" TotalStatements="4" CoveragePercent="0">
+          <Statement FileIndex="2" Line="43" Column="9" EndLine="43" EndColumn="10" Covered="False" />
+          <Statement FileIndex="2" Line="45" Column="13" EndLine="45" EndColumn="48" Covered="False" />
+          <Statement FileIndex="2" Line="48" Column="13" EndLine="48" EndColumn="114" Covered="False" />
+          <Statement FileIndex="2" Line="49" Column="9" EndLine="49" EndColumn="10" Covered="False" />
+        </Method>
+        <Method Name="TestParserWrongValues(System.String,System.String,System.String):System.Void" CoveredStatements="0" TotalStatements="4" CoveragePercent="0">
+          <Statement FileIndex="2" Line="33" Column="9" EndLine="33" EndColumn="10" Covered="False" />
+          <Statement FileIndex="2" Line="35" Column="13" EndLine="35" EndColumn="56" Covered="False" />
+          <Statement FileIndex="2" Line="38" Column="13" EndLine="38" EndColumn="106" Covered="False" />
+          <Statement FileIndex="2" Line="39" Column="9" EndLine="39" EndColumn="10" Covered="False" />
+        </Method>
+      </Type>
+    </Namespace>
+  </Assembly>
+</Root>
