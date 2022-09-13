@@ -38,4 +38,4 @@ jobs:
         if: success() || failure()
         with:
           name: test-results
-          path: HomeWork1/Hw1.Tests/TestCoverage.xml
+          path: Homework1/Hw1.Tests/TestCoverage.xml
