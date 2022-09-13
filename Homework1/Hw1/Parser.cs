@@ -7,7 +7,7 @@ public static class Parser
         out CalculatorOperation operation, 
         out double val2)
     {
-        if (IsArgLengthSupported(args) == false) throw new ArgumentException("Программа не распознает больше 3 входных данных");
+        if (IsArgLengthSupported(args) == false) throw new ArgumentException($"Неверное количество аргуметов. Встреченно: {args.Length}. Ожидалось 3.");
         val1 = double.TryParse(args[0], out var sd) ? sd : throw new ArgumentException("Данные введены некорректно");
         operation = ParseOperation(args[1]);
         val2 = double.TryParse(args[2], out var cs) ? cs : throw new ArgumentException("Данные введены некорректно");
