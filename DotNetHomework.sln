@@ -5,9 +5,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{ACFCEFF7-8
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hw1", "HomeWork1\Hw1\Hw1.csproj", "{4C0DB98A-6B41-4E8E-9558-1346F0CC64C7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hw1", "Homework1\Hw1\Hw1.csproj", "{4C0DB98A-6B41-4E8E-9558-1346F0CC64C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hw1Tests", "HomeWork1\Hw1.Tests\Hw1.Tests.csproj", "{2F7338C0-6535-4E98-894D-57AC5EF8E1C4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hw1Tests", "Homework1\Hw1.Tests\Hw1.Tests.csproj", "{2F7338C0-6535-4E98-894D-57AC5EF8E1C4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Homework 1", "Homework 1", "{489B9530-1E81-44F1-B026-B42879A56CF4}"
 	ProjectSection(SolutionItems) = preProject
