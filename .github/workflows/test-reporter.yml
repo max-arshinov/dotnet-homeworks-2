@@ -12,5 +12,5 @@ jobs:
       with:
         artifact: test-results            # artifact name
         name: test-report                  # Name of the check run which will be created
-        path: Homework1/Hw1.Tests/TestCoverage.xml
+        path: HomeWork*/Hw*Tests/TestResults/*.trx
         reporter: dotnet-trx              # Format of test results

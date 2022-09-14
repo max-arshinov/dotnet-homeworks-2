@@ -24,7 +24,7 @@ jobs:
       - name: Codecov
         uses: codecov/codecov-action@v3.1.0
         with:
-          file: Homework1/Hw1.Tests/TestCoverage.xml
+          file: Homework1/TestCoverage.xml
 
   test:
     runs-on: ubuntu-latest
@@ -38,4 +38,4 @@ jobs:
         if: success() || failure()
         with:
           name: test-results
-          path: Homework1/Hw1.Tests/TestCoverage.xml
+          path: HomeWork*/Hw*Tests/TestResults/*.trx
