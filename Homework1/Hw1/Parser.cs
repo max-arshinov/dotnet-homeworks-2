@@ -8,9 +8,8 @@ public static class Parser
         out CalculatorOperation operation, 
         out double val2)
     {
-        
         if (args == null || !IsArgLengthSupported(args) 
-            || !double.TryParse(args[0],out val1) || !double.TryParse(args[2], out val2))
+                         || !double.TryParse(args[0],out val1) || !double.TryParse(args[2], out val2))
             throw new ArgumentException();
 
         operation = ParseOperation(args[1]);
