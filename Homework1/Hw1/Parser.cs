@@ -1,4 +1,5 @@
 namespace Hw1;
+using System.Globalization;
 
 public static class Parser
 {
@@ -7,13 +8,27 @@ public static class Parser
         out CalculatorOperation operation, 
         out double val2)
     {
-        throw new NotImplementedException();
+        
+        if (args == null || !IsArgLengthSupported(args) 
+            || !double.TryParse(args[0],out val1) || !double.TryParse(args[2], out val2))
+            throw new ArgumentException();
+
+        operation = ParseOperation(args[1]);
+        if (operation == CalculatorOperation.Undefined)
+            throw new InvalidOperationException();
     }
 
     private static bool IsArgLengthSupported(string[] args) => args.Length == 3;
 
     private static CalculatorOperation ParseOperation(string arg)
     {
-        throw new NotImplementedException();
+        return arg switch
+        {
+            "+" => CalculatorOperation.Plus,
+            "-" => CalculatorOperation.Minus,
+            "*" => CalculatorOperation.Multiply,
+            "/" => CalculatorOperation.Divide,
+            _ => CalculatorOperation.Undefined
+        };
     }
 }
