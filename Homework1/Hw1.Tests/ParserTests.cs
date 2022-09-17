@@ -17,7 +17,7 @@ namespace Hw1Tests
             var args = new[] { "15", operation, "5" };
             
             //act
-            Parser.ParseCalcArguments(args, out var val1, out var operationResult, out var val2);
+            Parser.ParseCalcArguments(Array.AsReadOnly(args), out var val1, out var operationResult, out var val2);
 
             //assert
             Assert.Equal(15, val1);
@@ -35,7 +35,7 @@ namespace Hw1Tests
             var args = new[] { val1, operation, val2 };
             
             //assert
-            Assert.Throws<ArgumentException>(() => Parser.ParseCalcArguments(args, out _, out _, out _));
+            Assert.Throws<ArgumentException>(() => Parser.ParseCalcArguments(Array.AsReadOnly(args), out _, out _, out _));
         }
         
         [Fact]
@@ -45,7 +45,7 @@ namespace Hw1Tests
             var args = new[] { "3", ".", "4" };
             
             //assert
-            Assert.Throws<InvalidOperationException>(() => Parser.ParseCalcArguments(args, out _, out _, out _));
+            Assert.Throws<InvalidOperationException>(() => Parser.ParseCalcArguments(Array.AsReadOnly(args), out _, out _, out _));
         }
 
         [Fact]
@@ -55,7 +55,7 @@ namespace Hw1Tests
             var args = new[] { "3", ".", "4", "5" };
             
             //assert
-            Assert.Throws<ArgumentException>(() => Parser.ParseCalcArguments(args, out _, out _, out _));
+            Assert.Throws<ArgumentException>(() => Parser.ParseCalcArguments(Array.AsReadOnly(args), out _, out _, out _));
         }
     }
 }
