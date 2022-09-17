@@ -34,7 +34,7 @@
         newobj instance void [System.Runtime]System.ArgumentException::.ctor(string)
         throw
         
-        ValsParsed
+        ValsParsed:
         ret
     }
     

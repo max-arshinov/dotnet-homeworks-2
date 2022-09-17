@@ -25,4 +25,10 @@
       <ProjectReference Include="..\Hw2\Hw2.ilproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Content Include="..\..\DotNetHomework.sln">
+        <Link>DotNetHomework.sln</Link>
+      </Content>
+    </ItemGroup>
+
 </Project>
