@@ -17,6 +17,25 @@ namespace Hw2Tests
             Assert.Equal(operationExpected, p);
         }
 
+        [Theory]
+        [InlineData(new[] { "1", "+", "2" }, 1, CalculatorOperation.Plus, 2)]
+        [InlineData(new[] { "-43", "-", "24" }, -43, CalculatorOperation.Minus, 24)]
+        [InlineData(new[] { "43", "*", "24" }, 43, CalculatorOperation.Multiply, 24)]
+        [InlineData(new[] { "-43", "/", "-24" }, -43, CalculatorOperation.Divide, -24)]
+        [InlineData(new[] { "43", "d", "-24" }, 43, CalculatorOperation.Undefined, -24)]
+        public void CheckParserCorrectness(
+            string[] args,
+            int val1,
+            CalculatorOperation operation,
+            int val2)
+        {
+            Parser.ParseCalcArguments(args, out var val1r, out var operationR, out var val2r);
+
+            Assert.Equal(val1, val1r);
+            Assert.Equal(operation, operationR);
+            Assert.Equal(val2, val2r);
+        }
+
         [Fact]
         public void TestParserWrongOperation()
         {

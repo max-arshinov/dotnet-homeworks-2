@@ -1,9 +1,10 @@
 .class public abstract sealed auto ansi beforefieldinit
   Hw2.Calculator extends System.Object
 {
-    .method public static hidebysig int32 Calculate(
-        int32 value1,
-        int32 value2,
+
+    .method public static hidebysig float64 Calculate(
+        float64 value1,
+        float64 value2,
         valuetype Hw2.CalculatorOperation operation
     ) cil managed{
         ldarg operation
