@@ -14,10 +14,10 @@ public class SingleInitializationSingletonTests
         {
             i1 = SingleInitializationSingleton.Instance;
         });
-        
+
         var i2 = SingleInitializationSingleton.Instance;
         Assert.Equal(i2, i1);
-        
+
         Assert.True(elapsed.TotalMilliseconds >= i2.Delay);
     }
 
@@ -32,7 +32,7 @@ public class SingleInitializationSingletonTests
             var i = SingleInitializationSingleton.Instance;
             Assert.Equal(i, SingleInitializationSingleton.Instance);
         });
-        
+
         Assert.True(elapsed.TotalMilliseconds > SingleInitializationSingleton.DefaultDelay);
         Assert.True(elapsed.TotalMilliseconds >= delay);
     }

@@ -10,8 +10,10 @@ public class SingleInitializationSingleton
     private static volatile bool _isInitialized = false;
 
     public const int DefaultDelay = 3_000;
-    
+
     public int Delay { get; }
+
+    private static Lazy<SingleInitializationSingleton> _instanse = new Lazy<SingleInitializationSingleton>(() => new SingleInitializationSingleton());
 
     private SingleInitializationSingleton(int delay = DefaultDelay)
     {
@@ -22,14 +24,39 @@ public class SingleInitializationSingleton
 
     internal static void Reset()
     {
-        throw new NotImplementedException();
+        if(_isInitialized)
+            lock (Locker)
+            {
+                if (_isInitialized)
+                {
+                    _instanse = new Lazy<SingleInitializationSingleton>(() => new SingleInitializationSingleton());
+                    _isInitialized = false;
+                }
+            }
     }
 
     public static void Initialize(int delay)
     {
-        throw new NotImplementedException();
+        if (!_isInitialized)
+            lock (Locker)
+            {
+                if (!_isInitialized)
+                {
+                    _instanse = new Lazy<SingleInitializationSingleton>(() => new SingleInitializationSingleton(delay));
+                    _isInitialized = true;
+                    return;
+                }
+            }
+        throw new InvalidOperationException();
     }
 
-    public static SingleInitializationSingleton Instance => throw new NotImplementedException();
-
+   
+    public static SingleInitializationSingleton Instance 
+    {
+        get
+        {
+            lock(Locker)
+                return _instanse.Value;
+        }
+    }
 }
