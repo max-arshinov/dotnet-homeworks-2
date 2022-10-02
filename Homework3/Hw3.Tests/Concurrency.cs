@@ -16,7 +16,8 @@ public static class Concurrency
 
     private static readonly SemaphoreSlim SemaphoreSlim = new(1,1);
 
-    // https://habr.com/ru/post/198104/
+    private static readonly System.Threading.Semaphore Semaphore = new(1, 1);
+
     private static readonly ConcurrentDictionary<string, int> _dict = new();
 
     private static readonly object Locker = new();
@@ -86,7 +87,7 @@ public static class Concurrency
         var tasks = new List<Task>();
         for (int i = 0; i < taskCount; i++)
         {
-            var t = Task.Run(async () =>
+            var t = Task.Run( async () =>
             {
                 Event.WaitOne();
                 for (int j = 0; j < iterations; j++)
@@ -104,5 +105,15 @@ public static class Concurrency
         Event.Set();
         await Task.WhenAll(tasks);
         return iterations * taskCount;
+    }
+
+    public static int IncrementWithSemaphore(int threadCount, int iterations)
+    {
+        return DoIncrement(threadCount, iterations, () =>
+        {
+            Semaphore.WaitOne();
+            _index++;
+            Semaphore.Release();
+        });
     }
 }

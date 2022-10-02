@@ -18,7 +18,6 @@ public class SingleInitializationSingleton
     private SingleInitializationSingleton(int delay = DefaultDelay)
     {
         Delay = delay;
-        // imitation of complex initialization logic
         Thread.Sleep(delay);
     }
 

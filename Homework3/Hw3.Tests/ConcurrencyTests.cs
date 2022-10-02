@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using Hw3.Mutex;
+using Hw3.Semaphore;
 using Xunit;
 using Xunit.Abstractions;
 
@@ -85,9 +86,12 @@ public class ConcurrencyTests
         }
     }
 
+    [Fact]
     public void Semaphore()
     {
-        // TODO: homework+
+        var expected = Concurrency.IncrementWithSemaphore(8, 100_000);
+
+        Assert.Equal(expected, Concurrency.Index);
     }
     
     [Fact]
@@ -97,11 +101,33 @@ public class ConcurrencyTests
         Assert.Equal(expected, Concurrency.Index);
     }
 
-    public void NamedSemaphore_InterprocessCommunication()
+    [Fact]
+    public async void NamedSemaphore_InterprocessCommunication()
     {
-        // TODO: homework+
-        // https://learn.microsoft.com/en-us/dotnet/standard/threading/semaphore-and-semaphoreslim#named-semaphores
-        // see mutex as example
+        var p1 = new Process
+        {
+            StartInfo = GetProcessStartInfoForSemaphore()
+        };
+        var p2 = new Process
+        {
+            StartInfo = GetProcessStartInfoForSemaphore()
+        };
+
+        var sw = new Stopwatch();
+        sw.Start();
+        p1.Start();
+        p2.Start();
+        await p1.WaitForExitAsync();
+        await p2.WaitForExitAsync();
+        p1.WaitForExit();
+        var val = await p1.StandardOutput.ReadToEndAsync();
+        _toh.WriteLine(val);
+        p2.WaitForExit();
+        val = await p2.StandardOutput.ReadToEndAsync();
+        sw.Stop();
+        _toh.WriteLine(val);
+
+        Assert.True((sw.Elapsed.TotalMilliseconds - WithSemaphore.Delay * 2) >= 0);
     }
 
     [Fact]
@@ -147,6 +173,18 @@ public class ConcurrencyTests
         {
             FileName = "dotnet",
             Arguments = "run --project ../../../../Hw3.Mutex/Hw3.Mutex.csproj",
+            UseShellExecute = false,
+            RedirectStandardOutput = true,
+            CreateNoWindow = true
+        };
+    }
+
+    private static ProcessStartInfo GetProcessStartInfoForSemaphore()
+    {
+        return new ProcessStartInfo
+        {
+            FileName = "dotnet",
+            Arguments = "run --project ../../../../Hw3.Semaphore/Hw3.Semaphore.csproj",
             UseShellExecute = false,
             RedirectStandardOutput = true,
             CreateNoWindow = true
