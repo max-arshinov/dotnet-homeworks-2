@@ -1,7 +1,8 @@
-using System.IO.MemoryMappedFiles;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Hw3.Mutex;
 
+[ExcludeFromCodeCoverage]
 public class WithMutex: IDisposable
 {
     private static readonly string MutexName = "Global\\MyMutex__!";
@@ -27,7 +28,6 @@ public class WithMutex: IDisposable
         return _index;
     }
     
-    // https://learn.microsoft.com/en-us/dotnet/standard/garbage-collection/implementing-dispose
     public void Dispose()
     {
         // Dispose of unmanaged resources.

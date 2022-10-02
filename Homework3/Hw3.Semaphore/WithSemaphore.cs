@@ -1,5 +1,8 @@
-﻿namespace Hw3.Semaphore
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace Hw3.Semaphore
 {
+    [ExcludeFromCodeCoverage]
     public class WithSemaphore : IDisposable
     {
         private static readonly string SemaphoreName = "Global\\MySemaphore__!";
