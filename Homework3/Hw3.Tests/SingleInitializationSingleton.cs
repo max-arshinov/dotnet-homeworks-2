@@ -36,6 +36,8 @@ public class SingleInitializationSingleton
 
     public static void Initialize(int delay)
     {
+        if (delay < 0)
+            throw new ArgumentException("Delay must be non negative!");
         if (!_isInitialized)
             lock (Locker)
             {
@@ -46,7 +48,7 @@ public class SingleInitializationSingleton
                     return;
                 }
             }
-        throw new InvalidOperationException();
+        throw new InvalidOperationException("Can not initialize twice!");
     }
 
    
