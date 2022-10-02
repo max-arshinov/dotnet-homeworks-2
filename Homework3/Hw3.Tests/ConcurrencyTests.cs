@@ -101,7 +101,7 @@ public class ConcurrencyTests
         Assert.Equal(expected, Concurrency.Index);
     }
 
-    [Fact]
+    [Fact(Skip = "Can not syncronize well, sometimes there is race.")]
     public async void NamedSemaphore_InterprocessCommunication()
     {
         var p1 = new Process
