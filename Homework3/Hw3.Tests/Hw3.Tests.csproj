@@ -22,6 +22,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Hw3.Mutex\Hw3.Mutex.csproj" />
+      <ProjectReference Include="..\Hw3\Hw3.csproj" />
     </ItemGroup>
 
 </Project>

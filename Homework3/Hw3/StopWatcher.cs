@@ -1,7 +1,7 @@
 using System;
 using System.Diagnostics;
 
-namespace Hw3.Tests;
+namespace Hw3;
 
 public static class StopWatcher
 {

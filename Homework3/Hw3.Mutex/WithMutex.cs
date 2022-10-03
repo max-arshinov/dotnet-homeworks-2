@@ -1,8 +1,8 @@
 using System.IO.MemoryMappedFiles;
-
+using Hw3;
 namespace Hw3.Mutex;
 
-public class WithMutex: IDisposable
+public sealed class WithMutex: IDisposable
 {
     private static readonly string MutexName = "Global\\MyMutex__!";
 
@@ -35,8 +35,8 @@ public class WithMutex: IDisposable
         // Suppress finalization.
         GC.SuppressFinalize(this);
     }
-    
-    protected virtual void Dispose(bool disposing)
+
+    private void Dispose(bool disposing)
     {
         if (_disposed)
         {

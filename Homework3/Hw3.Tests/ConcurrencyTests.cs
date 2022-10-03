@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Hw3.Mutex;
 using Xunit;
 using Xunit.Abstractions;
+using Hw3;
 
 namespace Hw3.Tests;
 

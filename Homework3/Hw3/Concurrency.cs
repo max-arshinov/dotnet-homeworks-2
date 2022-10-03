@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Hw3.Tests;
+namespace Hw3;
 
 public static class Concurrency
 {
