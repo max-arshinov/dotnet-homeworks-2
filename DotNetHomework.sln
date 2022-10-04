@@ -13,13 +13,32 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "actions", "actions", "{82BA
 		.github\coverlet.runsettings = .github\coverlet.runsettings
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Homework5", "Homework5", "{1F321195-3723-45FB-B142-7532B04DA505}"
+	ProjectSection(SolutionItems) = preProject
+		Homework5\README.md = Homework5\README.md
+	EndProjectSection
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Hw5", "Homework5\Hw5\Hw5.fsproj", "{E1942129-E679-4E2C-BF1E-5334351D624E}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Hw5.Tests", "Homework5\Hw5.Tests\Hw5.Tests.fsproj", "{814746E9-72AE-4BEC-B0F5-36E66A19C896}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E1942129-E679-4E2C-BF1E-5334351D624E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1942129-E679-4E2C-BF1E-5334351D624E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1942129-E679-4E2C-BF1E-5334351D624E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1942129-E679-4E2C-BF1E-5334351D624E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{814746E9-72AE-4BEC-B0F5-36E66A19C896}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{814746E9-72AE-4BEC-B0F5-36E66A19C896}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{814746E9-72AE-4BEC-B0F5-36E66A19C896}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{814746E9-72AE-4BEC-B0F5-36E66A19C896}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{E1942129-E679-4E2C-BF1E-5334351D624E} = {1F321195-3723-45FB-B142-7532B04DA505}
+		{814746E9-72AE-4BEC-B0F5-36E66A19C896} = {1F321195-3723-45FB-B142-7532B04DA505}
 	EndGlobalSection
 EndGlobal
