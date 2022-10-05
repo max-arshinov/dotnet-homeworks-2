@@ -13,6 +13,8 @@ public class SingleInitializationSingleton
     
     public int Delay { get; }
 
+    private static  Lazy<SingleInitializationSingleton> instatnce = new Lazy<SingleInitializationSingleton>(() => new SingleInitializationSingleton());
+
     private SingleInitializationSingleton(int delay = DefaultDelay)
     {
         Delay = delay;
@@ -22,14 +24,31 @@ public class SingleInitializationSingleton
 
     internal static void Reset()
     {
-        throw new NotImplementedException();
+        new SingleInitializationSingleton();
+        _isInitialized = false;
     }
 
     public static void Initialize(int delay)
     {
-        throw new NotImplementedException();
+        if (_isInitialized == false)
+        {
+            lock (Locker)
+            {
+                if (_isInitialized == false)
+                {
+                    lock (Locker)
+                    {
+                        instatnce = new Lazy<SingleInitializationSingleton>(() => new SingleInitializationSingleton(delay));
+                        _isInitialized = true;
+                    }
+                    
+                }
+                else throw new InvalidOperationException();
+            }
+        }
+        else throw new InvalidOperationException(); 
     }
 
-    public static SingleInitializationSingleton Instance => throw new NotImplementedException();
+    public static SingleInitializationSingleton Instance => instatnce.Value;
 
 }
