@@ -10,5 +10,11 @@ type CalculatorOperation =
      | Undefined = 4
      
 let calculate (value1 : float) (operation : CalculatorOperation) (value2 : float) =
-    NotImplementedException() |> raise
+    match operation with 
+    | CalculatorOperation.Plus -> value1 + value2
+    | CalculatorOperation.Minus -> value1 - value2
+    | CalculatorOperation.Multiply -> value1 * value2
+    | CalculatorOperation.Divide -> value1 / value2
+    | CalculatorOperation.Undefined -> ArgumentOutOfRangeException("Undefined operation! Available: +, -, *, /") |> raise
+    | _ -> ArgumentException("Invalid arguments!") |> raise
     
