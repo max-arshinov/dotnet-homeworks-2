@@ -2,11 +2,14 @@
 
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
-
         <IsPackable>false</IsPackable>
+        <GenerateProgramFile>true</GenerateProgramFile>
     </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Include="CalculatorTests.fs" />
+        <Compile Include="ParserTests.fs" />
+    </ItemGroup>
 
     <ItemGroup>
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
@@ -22,7 +25,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Hw2\Hw2.ilproj" />
+      <ProjectReference Include="..\Hw4\Hw4.fsproj" />
     </ItemGroup>
 
 </Project>
