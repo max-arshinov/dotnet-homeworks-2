@@ -1,10 +1,11 @@
 ﻿module Hw4.Parser
 
 open System
+open System.Globalization
 open Hw4.Calculator
 
 let (|Float|_|) (str: string) =
-    match System.Double.TryParse str with
+    match System.Double.TryParse(str.Replace(",", "."), NumberStyles.Float, CultureInfo.InvariantCulture) with
     | true, float -> Some float
     | _ -> None
 

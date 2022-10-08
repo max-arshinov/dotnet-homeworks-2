@@ -1,9 +1,10 @@
 ﻿module Hw5.MaybeBuilder
 
 open System
+open System.Globalization
 
 let parseFloat (str: string) =
-    match str.Replace(".", ",") |> System.Double.TryParse with
+    match System.Double.TryParse(str.Replace(",", "."), NumberStyles.Float, CultureInfo.InvariantCulture) with
     | true, float -> Some float
     | _ -> None
 
