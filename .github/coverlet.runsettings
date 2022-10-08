@@ -5,7 +5,7 @@
       <DataCollector friendlyName="XPlat code coverage">
         <Configuration>
           <Format>opencover</Format>          
-          <ExcludeByFile>**/*.cshtml,**/Hw1/Program.cs,**/Hw3/**,**/Hw4/Program.fs,**/Hw5/Program.fs,**/Hw6/Program.fs</ExcludeByFile>
+          <ExcludeByFile>**/*.cshtml,**/Hw1/Program.cs,**/Homework3/**,**/Hw4/Program.fs,**/Hw5/Program.fs,**/Hw6/Program.fs</ExcludeByFile>
         </Configuration>
       </DataCollector>
     </DataCollectors>

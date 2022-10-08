@@ -74,17 +74,22 @@ let ``Incorrect operations return Error`` () =
     | Left resultError -> Assert.Equal(resultError, Message.WrongArgFormatOperation)
     
 [<Fact>]
-let ``Incorrect argument count returns WrongArgLength`` () =
+let ``Too many/not enough arguments return WrongArgLength`` () =
     //arrange
-    let args = [|"3";"+";"4";"5"|]
+    let tooMany = [|"3";"+";"4";"5"|]
+    let tooShort = [|"3";"+"|]
+    let check result =
+       match result with
+       | Right _ -> XunitException "Should return WrongArgLength" |> raise
+       | Left resultError -> Assert.Equal(resultError, Message.WrongArgLength)
     
-    //act
-    let result = parseCalcArguments args
+    //act  
+    let tooManyResult = parseCalcArguments tooMany
+    let tooShortResult = parseCalcArguments tooShort
 
     //assert
-    match result with
-    | Right _ -> XunitException "Should return WrongArgLength" |> raise
-    | Left resultError -> Assert.Equal(resultError, Message.WrongArgLength)
+    check tooManyResult
+    check tooShortResult
     
 [<Fact>]
 let ``any / 0 -> Error(Message.DivideByZero)`` () =
