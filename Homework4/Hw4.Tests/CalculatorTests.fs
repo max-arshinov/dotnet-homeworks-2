@@ -19,12 +19,12 @@ let ``+, -, *, / work return correct calculation results`` (value1, value2, oper
 [<Fact>]
 let ``Undefined operations throw ArgumentOutOfRangeException`` () =
     //assert
-    Assert.Throws<ArgumentOutOfRangeException>(fun () -> calculate 15 CalculatorOperation.Undefined 5 |> ignore)
+    Assert.Throws<ArgumentOutOfRangeException>(fun () -> calculate 15.0 CalculatorOperation.Undefined 5.0 |> ignore)
     
 [<Fact>]
 let ``0 / anything but 0 = 0`` () =
     //act 
-    let actual = calculate 0 CalculatorOperation.Divide 10
+    let actual = calculate 0. CalculatorOperation.Divide 10.0
     
     //assert
     Assert.Equal(0.0, actual)
@@ -32,7 +32,7 @@ let ``0 / anything but 0 = 0`` () =
 [<Fact>]
 let ``anything but 0 / 0 = Infinity`` () =
     //act 
-    let actual = calculate 10 CalculatorOperation.Divide 0
+    let actual = calculate 10.0 CalculatorOperation.Divide 0.0
     
     //assert
     Assert.Equal(Double.PositiveInfinity, actual)
@@ -40,7 +40,7 @@ let ``anything but 0 / 0 = Infinity`` () =
 [<Fact>]
 let ``0 / 0 = NaN`` () =
     //act 
-    let actual = calculate 0 CalculatorOperation.Divide 0
+    let actual = calculate 0. CalculatorOperation.Divide 0.0
     
     //assert
     Assert.Equal(Double.NaN, actual)
