@@ -40,3 +40,20 @@ let ``+, -, *, / work return correct calculation results with floats``
     //assert
     Assert.True(actual |> decimal < epsilon)
     
+let decimalTest: obj [] list = [
+    [| 15.6m; 5.6m; CalculatorOperation.Plus; 21.2m |]
+    [| 15.6m; 5.6m; CalculatorOperation.Minus; 10m |]
+    [| 15.6m; 5.6m; CalculatorOperation.Multiply; 87.36m |]
+    [| 15.6m; 5.6m; CalculatorOperation.Divide; 2.7857m |]
+]
+
+[<Theory>]
+[<MemberData(nameof(decimalTest))>]
+let ``+, -, *, / work return correct calculation results with decimals``
+    (value1 : decimal, value2: decimal, operation, expectedValue : decimal) =
+    //act
+    let actual = abs (expectedValue - calculate value1 operation value2)
+        
+    //assert
+    Assert.True(actual |> decimal < epsilon)
+    
