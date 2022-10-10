@@ -1,4 +1,4 @@
 # Домашняя работа для третьего учебного семестра (2 год обучения)
 
-[![.NET](https://github.com/Ajbolitt76/dotnet-homeworks-2/actions/workflows/dotnet.yml/badge.svg?branch=HW-2.2)](https://github.com/Ajbolitt76/dotnet-homeworks-2/actions/workflows/dotnet.yml)
+[![.NET](https://github.com/Ajbolitt76/dotnet-homeworks-2/actions/workflows/dotnet.yml/badge.svg?branch=master)](https://github.com/Ajbolitt76/dotnet-homeworks-2/actions/workflows/dotnet.yml)
 [![codecov](https://codecov.io/gh/Ajbolitt76/dotnet-homeworks-2/branch/Muhamedshin-A-HW-1/graph/badge.svg?token=C30KRWV6SH)](https://codecov.io/gh/Ajbolitt76/dotnet-homeworks-2)
