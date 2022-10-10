@@ -3,10 +3,10 @@
 open System
 
 type CalculatorOperation =
-     | Plus = 0
-     | Minus = 1
-     | Multiply = 2
-     | Divide = 3
+     | Plus
+     | Minus
+     | Multiply
+     | Divide
 
 [<Literal>] 
 let plus = "+"
@@ -21,5 +21,9 @@ let multiply = "*"
 let divide = "/"
 
 [<System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage>]
-let inline calculate value1 operation value2: 'a =
-    (NotImplementedException() |> raise)
+let inline calculate value1 operation value2 =
+    match operation with
+    | Plus -> value1 + value2
+    | Minus -> value1 - value2
+    | Multiply -> value1 * value2
+    | Divide -> value1 / value2

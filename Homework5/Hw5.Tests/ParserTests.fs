@@ -1,61 +1,26 @@
 module Hw5Tests.ParserTests
 
 open Hw5
-open Hw5.Calculator
+open Hw5.MaybeBuilder
 open Hw5.Parser
 open Microsoft.FSharp.Core
 open Xunit
+open Xunit.Sdk
 
 let epsilon: decimal = 0.001m
-        
-[<Theory>]
-[<InlineData(15, 5, CalculatorOperation.Plus, 20)>]
-[<InlineData(15, 5, CalculatorOperation.Minus, 10)>]
-[<InlineData(15, 5, CalculatorOperation.Multiply, 75)>]
-[<InlineData(15, 5, CalculatorOperation.Divide, 3)>]
-let ``ints parsed correctly`` (value1 : int, value2: int, operation, expectedValue : int) =
-    //act
-    let actual = Calculator.calculate value1 operation value2
-    
-    //assert
-    Assert.Equal(expectedValue, actual)
+
+let floatTestData: obj [] list = [
+    [|"1.2"; Some 1.2|]
+    [|"1,2"; Some 1.2|]
+    [|"-1,2"; Some -1.2|]
+    [| "frdwsfd"; None |]
+]
 
 [<Theory>]
-[<InlineData(15.6, 5.6, CalculatorOperation.Plus, 21.2)>]
-[<InlineData(15.6, 5.6, CalculatorOperation.Minus, 10)>]
-[<InlineData(15.6, 5.6, CalculatorOperation.Multiply, 87.36)>]
-[<InlineData(15.6, 5.6, CalculatorOperation.Divide, 2.7857)>]
-let ``floats parsed correctly`` (value1 : float, value2: float, operation, expectedValue : float) =
-    //act
-    let actual = (abs (expectedValue - Calculator.calculate value1 operation value2))
-    
-    //assert
-    Assert.True(actual |> decimal < epsilon)
-    
-[<Theory>]
-[<InlineData(15.6, 5.6, CalculatorOperation.Plus, 21.2)>]
-[<InlineData(15.6, 5.6, CalculatorOperation.Minus, 10)>]
-[<InlineData(15.6, 5.6, CalculatorOperation.Multiply, 87.36)>]
-[<InlineData(15.6, 5.6, CalculatorOperation.Divide, 2.7857)>]
-let ``doubles parsed correctly`` (value1 : double, value2: double, operation, expectedValue : double) =
-    //act
-    let actual = (abs (expectedValue - Calculator.calculate value1 operation value2))
-    
-    //assert
-    Assert.True(actual |> decimal < epsilon)
-    
-[<Theory>]
-[<InlineData(15.6, 5.6, CalculatorOperation.Plus, 21.2)>]
-[<InlineData(15.6, 5.6, CalculatorOperation.Minus, 10)>]
-[<InlineData(15.6, 5.6, CalculatorOperation.Multiply, 87.36)>]
-[<InlineData(15.6, 5.6, CalculatorOperation.Divide, 2.7857)>]
-let ``decimals parsed correctly`` (value1 : decimal, value2: decimal, operation, expectedValue : decimal) =
-    //act
-    let actual = (abs (expectedValue - Calculator.calculate value1 operation value2))
-    
-    //assert
-    Assert.True(actual < epsilon)
-    
+[<MemberData(nameof(floatTestData))>]
+let ``Float should work`` (value, expected) =
+    Assert.Equal(expected, parseFloat value)
+
 [<Theory>]
 [<InlineData("15", "+", "5", 20)>]
 [<InlineData("15", "-", "5", 10)>]
@@ -74,10 +39,10 @@ let ``values parsed correctly`` (value1, operation, value2, expectedValue) =
     
     //assert
     match result with
-    | Ok resultOk ->
+    | Right resultOk ->
         match resultOk with
         | arg1, operation, arg2 -> Assert.True((abs (expectedValue - Calculator.calculate arg1 operation arg2)) |> decimal < epsilon)
-    | Error _ -> Assert.False |> ignore
+    | Left m -> XunitException $"Should return Right received {m}" |> raise
         
 [<Theory>]
 [<InlineData("f", "+", "3")>]
@@ -92,8 +57,8 @@ let ``Incorrect values return Error`` (value1, operation, value2) =
     
     //assert
     match result with
-    | Ok _ -> Assert.False |> ignore
-    | Error resultError -> Assert.Equal(resultError, Message.WrongArgFormat)
+    | Right _ -> XunitException "Should return WrongArgFormat" |> raise
+    | Left resultError -> Assert.Equal(resultError, Message.WrongArgFormat)
     
 [<Fact>]
 let ``Incorrect operations return Error`` () =
@@ -105,21 +70,26 @@ let ``Incorrect operations return Error`` () =
     
     //assert
     match result with
-    | Ok _ -> Assert.False |> ignore
-    | Error resultError -> Assert.Equal(resultError, Message.WrongArgFormatOperation)
+    | Right _ -> XunitException "Should return WrongArgFormatOperation" |> raise
+    | Left resultError -> Assert.Equal(resultError, Message.WrongArgFormatOperation)
     
 [<Fact>]
-let ``Incorrect argument count throws ArgumentException`` () =
+let ``Too many/not enough arguments return WrongArgLength`` () =
     //arrange
-    let args = [|"3";"+";"4";"5"|]
+    let tooMany = [|"3";"+";"4";"5"|]
+    let tooShort = [|"3";"+"|]
+    let check result =
+       match result with
+       | Right _ -> XunitException "Should return WrongArgLength" |> raise
+       | Left resultError -> Assert.Equal(resultError, Message.WrongArgLength)
     
-    //act
-    let result = parseCalcArguments args
-    
+    //act  
+    let tooManyResult = parseCalcArguments tooMany
+    let tooShortResult = parseCalcArguments tooShort
+
     //assert
-    match result with
-    | Ok _ -> Assert.False |> ignore
-    | Error resultError -> Assert.Equal(resultError, Message.WrongArgLength)
+    check tooManyResult
+    check tooShortResult
     
 [<Fact>]
 let ``any / 0 -> Error(Message.DivideByZero)`` () =
@@ -131,6 +101,6 @@ let ``any / 0 -> Error(Message.DivideByZero)`` () =
     
     //assert
     match result with
-    | Ok _ -> Assert.False |> ignore
-    | Error resultError -> Assert.Equal(resultError, Message.DivideByZero)
+    | Right _ -> XunitException "Should return DivideByZero" |> raise
+    | Left resultError -> Assert.Equal(resultError, Message.DivideByZero)
 
