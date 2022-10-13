@@ -10,7 +10,7 @@ public static class Calculator
             CalculatorOperation.Minus => value1 - value2,
             CalculatorOperation.Multiply => value1 * value2,
             CalculatorOperation.Divide => value1 / value2,
-            _ => throw new ArgumentOutOfRangeException()
+            _ => throw new InvalidOperationException()
         };
     }
 }

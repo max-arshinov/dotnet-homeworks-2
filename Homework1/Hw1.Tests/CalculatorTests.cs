@@ -24,7 +24,7 @@ namespace Hw1Tests
         public void TestInvalidOperation()
         {
             //assert
-            Assert.Throws<ArgumentOutOfRangeException>(() => Calculator.Calculate(0, CalculatorOperation.Undefined, 10));
+            Assert.Throws<InvalidOperationException>(() => Calculator.Calculate(0, CalculatorOperation.Undefined, 10));
         }
 
         [Fact]
