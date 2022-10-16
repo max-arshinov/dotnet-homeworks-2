@@ -1,5 +1,6 @@
 module Hw5Tests.ParserTests
 
+open System
 open Hw5
 open Hw5.Calculator
 open Hw5.Parser
@@ -77,7 +78,7 @@ let ``values parsed correctly`` (value1, operation, value2, expectedValue) =
     | Ok resultOk ->
         match resultOk with
         | arg1, operation, arg2 -> Assert.True((abs (expectedValue - Calculator.calculate arg1 operation arg2)) |> decimal < epsilon)
-    | Error _ -> Assert.False |> ignore
+    | Error e -> raise (InvalidOperationException(e))
         
 [<Theory>]
 [<InlineData("f", "+", "3")>]
@@ -92,7 +93,7 @@ let ``Incorrect values return Error`` (value1, operation, value2) =
     
     //assert
     match result with
-    | Ok _ -> Assert.False |> ignore
+    | Ok _ -> raise (InvalidOperationException("This test must always return Error Result Type"))
     | Error resultError -> Assert.Equal(resultError, Message.WrongArgFormat)
     
 [<Fact>]
@@ -105,7 +106,7 @@ let ``Incorrect operations return Error`` () =
     
     //assert
     match result with
-    | Ok _ -> Assert.False |> ignore
+    | Ok _ -> raise (InvalidOperationException("This test must always return Error Result Type"))
     | Error resultError -> Assert.Equal(resultError, Message.WrongArgFormatOperation)
     
 [<Fact>]
@@ -118,7 +119,7 @@ let ``Incorrect argument count throws ArgumentException`` () =
     
     //assert
     match result with
-    | Ok _ -> Assert.False |> ignore
+    | Ok _ -> raise (InvalidOperationException("This test must always return Error Result Type"))
     | Error resultError -> Assert.Equal(resultError, Message.WrongArgLength)
     
 [<Fact>]
@@ -131,6 +132,6 @@ let ``any / 0 -> Error(Message.DivideByZero)`` () =
     
     //assert
     match result with
-    | Ok _ -> Assert.False |> ignore
+    | Ok _ -> raise (InvalidOperationException("This test must always return Error Result Type"))
     | Error resultError -> Assert.Equal(resultError, Message.DivideByZero)
 
