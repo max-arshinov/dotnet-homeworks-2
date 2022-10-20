@@ -4,7 +4,7 @@
 
 ### Теория
  1. Прочитать весь раздел Reflection (включая раздел Serialization) на [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/reflection)
- 2.  Пройти весь раздел [Relflection на Ulearn](https://ulearn.me/course/basicprogramming2/Refleksiya_Klass_Type_8386b127-ea69-465d-87ba-24e08df9f6d2)
+ 2. Пройти весь раздел [Relflection на Ulearn](https://ulearn.me/course/basicprogramming2/Refleksiya_Klass_Type_8386b127-ea69-465d-87ba-24e08df9f6d2)
  3. Научиться работать с [html-формами](https://html5book.ru/html5-forms/)
 
 ### Вопросы к семинару
