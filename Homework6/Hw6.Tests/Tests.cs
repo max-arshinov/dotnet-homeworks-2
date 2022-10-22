@@ -74,7 +74,7 @@ namespace Hw6Tests
 
         [Fact]
         public async Task TestParserDividingByZero() =>
-            await RunTest("15.6", "0", "Divide", "DivideByZero", HttpStatusCode.OK, true);
+            await RunTest("15.6", "0", "Divide", "DivideByZero", HttpStatusCode.BadRequest, true);
 
         private async Task RunTest(string value1, string value2, string operation, string expectedValueOrError,
             HttpStatusCode statusCode, bool isDividingByZero = false)
@@ -88,7 +88,7 @@ namespace Hw6Tests
             var result = await response.Content.ReadAsStringAsync();
 
             // assert
-            Assert.True(response.StatusCode == statusCode);
+            Assert.Equal(response.StatusCode, statusCode);
             if (statusCode == HttpStatusCode.OK && !isDividingByZero)
                 Assert.True(Math.Abs(decimal.Parse(expectedValueOrError, CultureInfo.InvariantCulture) -
                                      decimal.Parse(result, CultureInfo.CurrentCulture)) < Epsilon);
