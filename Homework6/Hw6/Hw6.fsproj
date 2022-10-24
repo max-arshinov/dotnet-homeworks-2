@@ -14,6 +14,8 @@
     </ItemGroup>
 
     <ItemGroup>
+        <Compile Include="ResultBuilder.fs" />
+        <Compile Include="Calculator.fs" />
         <Compile Include="Program.fs" />
     </ItemGroup>
 
