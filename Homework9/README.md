@@ -4,8 +4,10 @@
 
 ### Теория
 1. [Деревья выражений в enterprise](https://habr.com/ru/company/jugru/blog/423891/) ([репозиторий с примерами](https://github.com/max-arshinov/Beyond-LINQ-Using-Expression-Trees-in-.NET))
-2. [C# programming. Lesson 15. Expression tree](https://www.youtube.com/watch?v=a9L22U4XWN0&ab_channel=%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D1%8D%D1%82%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D1%82%D0%BE) 
-3. *Факультатив:* [*Async as surrogate IO*](https://blog.ploeh.dk/2016/04/11/async-as-surrogate-io/)
+2. [C# programming. Lesson 15. Expression tree](https://www.youtube.com/watch?v=a9L22U4XWN0&ab_channel=%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D1%8D%D1%82%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D1%82%D0%BE)
+3. [AutoFilterer](https://github.com/enisn/AutoFilterer)
+4. [AutoMapper](https://automapper.org/), [Mapster](https://github.com/MapsterMapper/Mapster)
+5. *Факультатив:* [*Async as surrogate IO*](https://blog.ploeh.dk/2016/04/11/async-as-surrogate-io/)
 
 ### Вопросы к семинару
  1. В чем отличие IQueryable<T> от IEnumerable<T>?
