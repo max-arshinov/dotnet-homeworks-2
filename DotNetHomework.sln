@@ -22,6 +22,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Hw6", "Homework6\Hw6\Hw6.fs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hw6Tests", "Homework6\Hw6.Tests\Hw6Tests.csproj", "{9A993124-7262-48FA-8FAB-A8EABA119947}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ConsoleClient", "Homework6\ConsoleClient\ConsoleClient.fsproj", "{BF7FB6AE-03EE-4BF8-A751-6E3F9FB0DF05}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,9 +38,14 @@ Global
 		{9A993124-7262-48FA-8FAB-A8EABA119947}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A993124-7262-48FA-8FAB-A8EABA119947}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A993124-7262-48FA-8FAB-A8EABA119947}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF7FB6AE-03EE-4BF8-A751-6E3F9FB0DF05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF7FB6AE-03EE-4BF8-A751-6E3F9FB0DF05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF7FB6AE-03EE-4BF8-A751-6E3F9FB0DF05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF7FB6AE-03EE-4BF8-A751-6E3F9FB0DF05}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{3B6B82C5-ACA8-4128-86CB-1EECC9D3B6BC} = {E16D4D1E-F9D7-4566-8439-E4A063CFAFAD}
 		{9A993124-7262-48FA-8FAB-A8EABA119947} = {E16D4D1E-F9D7-4566-8439-E4A063CFAFAD}
+		{BF7FB6AE-03EE-4BF8-A751-6E3F9FB0DF05} = {E16D4D1E-F9D7-4566-8439-E4A063CFAFAD}
 	EndGlobalSection
 EndGlobal

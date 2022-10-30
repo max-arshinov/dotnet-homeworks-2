@@ -14,6 +14,11 @@
     </ItemGroup>
 
     <ItemGroup>
+        <Compile Include="MaybeBuilder.fs" />
+        <Compile Include="InputValues.fs" />
+        <Compile Include="Calculator.fs" />
+        <Compile Include="Message.fs" />
+        <Compile Include="Parser.fs" />
         <Compile Include="Program.fs" />
     </ItemGroup>
 
@@ -22,5 +27,9 @@
         <Content Include="WebRoot\**\*">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ConsoleClient\ConsoleClient.fsproj" />
     </ItemGroup>
 </Project>
