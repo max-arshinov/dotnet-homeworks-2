@@ -1,4 +1,4 @@
-namespace Hw8.Calculator;
+namespace Hw8.Common;
 
 public enum Operation
 {
