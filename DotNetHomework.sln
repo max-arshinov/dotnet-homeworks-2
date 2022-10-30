@@ -13,13 +13,29 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "actions", "actions", "{82BA
 		.github\coverlet.runsettings = .github\coverlet.runsettings
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hw9", "Homework9\Hw9\Hw9.csproj", "{6F73518F-572E-463B-93D5-1967E7499F03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hw9.Tests", "Homework9\Hw9.Tests\Hw9.Tests.csproj", "{1DAA9928-7ABE-40A1-96AF-D73832851F78}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Homework9", "Homework9", "{1A83D493-25C0-4C9C-A458-EC3694BE9F2F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6F73518F-572E-463B-93D5-1967E7499F03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F73518F-572E-463B-93D5-1967E7499F03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F73518F-572E-463B-93D5-1967E7499F03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F73518F-572E-463B-93D5-1967E7499F03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DAA9928-7ABE-40A1-96AF-D73832851F78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DAA9928-7ABE-40A1-96AF-D73832851F78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DAA9928-7ABE-40A1-96AF-D73832851F78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DAA9928-7ABE-40A1-96AF-D73832851F78}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{6F73518F-572E-463B-93D5-1967E7499F03} = {1A83D493-25C0-4C9C-A458-EC3694BE9F2F}
+		{1DAA9928-7ABE-40A1-96AF-D73832851F78} = {1A83D493-25C0-4C9C-A458-EC3694BE9F2F}
 	EndGlobalSection
 EndGlobal
