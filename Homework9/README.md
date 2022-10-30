@@ -10,12 +10,12 @@
 5. *Факультатив:* [*Async as surrogate IO*](https://blog.ploeh.dk/2016/04/11/async-as-surrogate-io/)
 
 ### Вопросы к семинару
- 1. В чем отличие IQueryable<T> от IEnumerable<T>?
- 2. Назовите типы лямбда-выражений в методах IQueryable.Where и IEnumerable.Where
+ 1. В чем отличие `IQueryable<T>` от `IEnumerable<T>`?
+ 2. Назовите типы лямбда-выражений в методах `IQueryable.Where` и `IEnumerable.Where`
  3. Как от Expression перейти к делегату?
- 4. Как от делегата перейти к Expression?
+ 4. Как от делегата перейти к `Expression`?
  5. Назовите основные сценарии применения Expressions в прикладной разработке.
- 6. Почему нужно отказаться от использования Activator.CreateInstance и нужно ли?
+ 6. Почему нужно отказаться от использования `Activator.CreateInstance` и нужно ли?
  
 ### Практика
  1. Изменить входные параметры калькулятора - передавать строку с выражением, например (2+3) / 12 * 7 + 8 * 9, преобразовывать строку к Expression Tree
@@ -30,4 +30,4 @@
     8 * 9  
     -------------- +
 ### Задание на дополнительные баллы
-1.  Создать AsyncEitherBuilder, оформить клиент на F#, работающий на основе AsyncEitherBuilder
+1.  Создать `AsyncEitherBuilder`, оформить клиент на F#, работающий на основе `AsyncEitherBuilder`
