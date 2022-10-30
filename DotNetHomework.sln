@@ -18,6 +18,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hw9.Tests", "Homework9\Hw9.Tests\Hw9.Tests.csproj", "{1DAA9928-7ABE-40A1-96AF-D73832851F78}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Homework9", "Homework9", "{1A83D493-25C0-4C9C-A458-EC3694BE9F2F}"
+	ProjectSection(SolutionItems) = preProject
+		Homework9\README.md = Homework9\README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
