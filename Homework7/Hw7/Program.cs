@@ -1,4 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
+using System.Text.Encodings.Web;
+using System.Text.Unicode;
+using Microsoft.Extensions.WebEncoders;
 
 namespace Hw7;
 
@@ -10,6 +13,11 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
 
         builder.Services.AddControllersWithViews();
+        
+        builder.Services.Configure<WebEncoderOptions>(options =>
+        {
+            options.TextEncoderSettings = new TextEncoderSettings(UnicodeRanges.All);
+        });
 
         var app = builder.Build();
 

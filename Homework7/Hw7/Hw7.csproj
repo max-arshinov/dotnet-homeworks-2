@@ -5,9 +5,5 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
-
-    <ItemGroup>
-      <_ContentIncludedByDefault Remove="Views\Test\TestModel.cshtml" />
-    </ItemGroup>
-
+    
 </Project>
