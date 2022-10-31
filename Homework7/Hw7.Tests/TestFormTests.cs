@@ -12,7 +12,7 @@ namespace Hw7Tests;
 public class TestFormTests : IClassFixture<WebApplicationFactory<Program>>
 {
     private readonly HttpClient _client;
-    private readonly string _url = "/Test/TestModel";
+    private readonly string _url = "/Test/Test";
 
     public TestFormTests(WebApplicationFactory<Program> fixture)
     {
