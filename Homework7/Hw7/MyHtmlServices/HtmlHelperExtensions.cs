@@ -129,11 +129,8 @@ public static class HtmlHelperExtensions
     private static string GetInputType(PropertyInfo property)
         => property.PropertyType switch
         {
-            { } t when t == typeof(string) => "text",
-            { } t when t == typeof(int) || t == typeof(double) => "number",
-            { } t when t == typeof(bool) => "checkbox",
-            { } t when t == typeof(DateTime) => "date",
-            _ => "text"
+            { } t when t == typeof(int) => "number",
+            _ => "text",
         };
 
     private static string GetPropertyName(MemberInfo propertyInfo) =>
