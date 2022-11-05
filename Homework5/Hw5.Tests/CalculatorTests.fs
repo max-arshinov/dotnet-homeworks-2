@@ -1,4 +1,4 @@
-module Hw5Tests.CalculatorTests
+module Hw5.Tests.CalculatorTests
 
 open Hw5
 open Hw5.Calculator

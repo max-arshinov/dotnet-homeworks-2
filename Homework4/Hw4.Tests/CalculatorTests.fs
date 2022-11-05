@@ -1,4 +1,4 @@
-module Hw4Tests.CalculatorTests
+module Hw4.Tests.CalculatorTests
 
 open System
 open Hw4.Calculator

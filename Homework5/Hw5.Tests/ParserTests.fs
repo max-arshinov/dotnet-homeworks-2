@@ -1,4 +1,4 @@
-module Hw5Tests.ParserTests
+module Hw5.Tests.ParserTests
 
 open System
 open Hw5

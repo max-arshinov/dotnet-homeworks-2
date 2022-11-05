@@ -1,4 +1,4 @@
-module Hw4Tests.ParserTests
+module Hw4.Tests.ParserTests
 
 open System
 open Hw4.Calculator
