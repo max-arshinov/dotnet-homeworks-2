@@ -1,6 +1,6 @@
 using System;
 
-namespace Hw7Tests.Shared;
+namespace Hw7.Tests.Shared;
 
 public static class StringExtensions
 {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using HtmlAgilityPack;
 using Hw7.Models.ForTests;
 
-namespace Hw7Tests.Shared;
+namespace Hw7.Tests.Shared;
 
 public static class TestHelper
 {

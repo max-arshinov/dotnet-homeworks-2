@@ -2,10 +2,9 @@ using System;
 using System.Globalization;
 using System.Net;
 using System.Threading.Tasks;
-using Hw6;
 using Xunit;
 
-namespace Hw6Tests
+namespace Hw6.Tests
 {
     public class BasicTests : IClassFixture<CustomWebApplicationFactory<App.Startup>>
     {

@@ -5,9 +5,7 @@
 
         <IsPackable>false</IsPackable>
 
-        <RootNamespace>Hw6Tests</RootNamespace>
-
-        <AssemblyName>Hw6Tests</AssemblyName>
+        <PackageId>Hw6.Tests</PackageId>
     </PropertyGroup>
 
     <ItemGroup>

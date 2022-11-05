@@ -1,8 +1,7 @@
 using System;
-using Hw1;
 using Xunit;
 
-namespace Hw1Tests
+namespace Hw1.Tests
 {
     public class CalculatorTests
     {

@@ -1,15 +1,13 @@
 using System.Net.Http;
 using System.Threading.Tasks;
-using Hw7;
 using Hw7.ErrorMessages;
 using Hw7.Models;
 using Hw7.Models.ForTests;
-using Hw7Tests.Shared;
+using Hw7.Tests.Shared;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Xunit;
 
-
-namespace Hw7Tests;
+namespace Hw7.Tests;
 
 public class UserFormTests : IClassFixture<WebApplicationFactory<Program>>
 {
