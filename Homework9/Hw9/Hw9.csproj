@@ -11,4 +11,12 @@
       <_ContentIncludedByDefault Remove="Views\Home\Privacy.cshtml" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Services\StringToExpression" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Hw9.Parser\Hw9.Parser.csproj" />
+    </ItemGroup>
+
 </Project>
