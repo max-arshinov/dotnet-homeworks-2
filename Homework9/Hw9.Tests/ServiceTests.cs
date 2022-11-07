@@ -37,6 +37,21 @@ public class ServiceTests
     [Fact]
     public void MathExpressionCalculator_ShouldThrowOnUnknownConstantExpression()
     {
+        Assert.ThrowsAsync<InvalidOperationException>(
+            (async () =>
+            {
+                await new MathExpressionCalculator().CalculateConstant(Expression.Constant("12"));
+            }));
+        Assert.ThrowsAsync<InvalidOperationException>(
+            (async () =>
+            {
+                await new MathExpressionCalculator().CalculateConstant(Expression.Constant(null));
+            }));
+    }
+
+    [Fact]
+    public void ToExpressionVisitor_ShouldThrowOnUnknownNode()
+    {
         Assert.Throws<NotSupportedException>(
             (() =>
             {
@@ -44,13 +59,4 @@ public class ServiceTests
             }));
     }
 
-    [Fact]
-    public void ToExpressionVisitor_ShouldThrowOnUnknownNode()
-    {
-        Assert.ThrowsAsync<InvalidOperationException>(
-            (async () =>
-            {
-                await new MathExpressionCalculator().CalculateConstant(Expression.Constant("12"));
-            }));
-    }
 }
