@@ -21,7 +21,7 @@ public class ToExpressionVisitor
                 => Expression.Subtract(Visit(minusNode.Left), Visit(minusNode.Right)),
             NodeOperatorNegate negate
                 => Expression.Negate(Visit(negate.Operand)),
-            _ => throw new InvalidOperationException()
+            _ => throw new NotSupportedException()
         };
     }
 }

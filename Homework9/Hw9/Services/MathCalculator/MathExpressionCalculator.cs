@@ -14,7 +14,7 @@ public class MathExpressionCalculator
         => expression.NodeType switch
         {
             ExpressionType.Negate => -await operand,
-            _ => throw new InvalidOperationException()
+            _ => throw new NotSupportedException()
         };
 
     public async Task<double> CalculateBinary(BinaryExpression expression, Task<double> left, Task<double> right)
@@ -28,7 +28,7 @@ public class MathExpressionCalculator
             ExpressionType.Add => leftValue + rightValue,
             ExpressionType.Subtract => leftValue - rightValue,
             ExpressionType.Multiply => leftValue * rightValue,
-            _ => throw new InvalidOperationException()
+            _ => throw new NotSupportedException()
         };
     }
 

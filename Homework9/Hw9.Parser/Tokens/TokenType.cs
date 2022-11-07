@@ -13,9 +13,4 @@ public abstract class TokenType
     /// Приоритет токена
     /// </summary>
     public abstract int Priority { get; }
-
-    /// <summary>
-    /// Не учавствует в дереве
-    /// </summary>
-    public virtual bool Ignore => false;
 }

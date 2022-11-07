@@ -9,16 +9,8 @@ public class Parser : IParser
 {
     private TokenPipe _tokenPipe;
     private readonly IParserProvider _parserProvider;
-    
-    internal IParserProvider ParserProvider => _parserProvider;
 
     private readonly List<Token> _tokenCache = new();
-
-    public Parser(TokenPipe pipe, IParserProvider parserProvider)
-    {
-        _tokenPipe = pipe;
-        _parserProvider = parserProvider;
-    }
 
     public Parser(IParserProvider parserProvider)
     {
@@ -81,11 +73,6 @@ public class Parser : IParser
             : _parserProvider.GetInfixParser(token.Type)?.Priority
               ?? 0);
     }
-
-    internal Token TakeToken(TokenType expectedType)
-        => LookAhead()?.Type != expectedType
-            ? throw new InvalidOperationException($"Неожиданный токен {expectedType}, встречен {LookAhead()?.Type}")
-            : TakeToken();
 
     internal bool Match(TokenType ex)
     {
