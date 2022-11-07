@@ -1,4 +1,4 @@
-﻿using Hw7.Models;
+using Hw7.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Hw7.Controllers;

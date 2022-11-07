@@ -30,6 +30,8 @@ public class BinaryOperatorParser: IInfixParser
         catch (ParsingError e)
             when (e.Message == MathErrorMessager.StartingWithOperation)
         {
+            if(laNode.Type == TokenTypes.BraceClose)
+                throw new ParsingError(MathErrorMessager.OperationBeforeParenthesisMessage(token.Value), token);
             throw new ParsingError(MathErrorMessager.TwoOperationInRowMessage(token.Value, laNode.Value), token);
         }
     }

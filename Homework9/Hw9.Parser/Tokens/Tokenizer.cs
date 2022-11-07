@@ -2,14 +2,14 @@
 
 namespace Hw9.Parser.Tokens;
 
-public class Tokenizer
+public class Tokenizer : ITokenizer
 {
     public TokenPipe TokenPipe { get; set; } = new();
 
     private string _lexeme = "";
     private int _lexemeStart;
     private int _currentPosition;
-    private int _ambigiousPosition;
+    private int _ambiguousPosition;
     
     public TokenPipe Tokenize(string input)
     {
@@ -17,6 +17,7 @@ public class Tokenizer
 
         _lexeme = "";
         _lexemeStart = 0;
+        _ambiguousPosition = -1;
 
         for (int index = 0; index < input.Length; index++)
         {
@@ -30,7 +31,7 @@ public class Tokenizer
             
             if (_lexeme == "")
                 _lexeme += c;
-            else if (c.IsWhitespace())
+            else if (c.IsWhitespace() && _ambiguousPosition == -1)
             {
                 FinishToken(validCurrent.FirstOrDefault());
                 wasFinished = true;
@@ -43,24 +44,24 @@ public class Tokenizer
             }
             else if (validNext.Count >= 0 || validCurrent.Count == 0)
             {
-                if (validNext.Count == 0 && _ambigiousPosition == -1)
-                    _ambigiousPosition = _currentPosition - 1;
+                if (validNext.Count == 0 && _ambiguousPosition == -1)
+                    _ambiguousPosition = _currentPosition - 1;
                 _lexeme += c;
             }
 
             if (wasFinished)
             {
-                _ambigiousPosition = -1;
+                _ambiguousPosition = -1;
                 if(!shouldSkip)
                     _lexeme = c.ToString();
             }
 
-            if (index == input.Length - 1 && _ambigiousPosition >= 0)
+            if (index == input.Length - 1 && _ambiguousPosition >= 0)
             {
-                _lexeme = input[_ambigiousPosition].ToString();
+                _lexeme = input[_ambiguousPosition].ToString();
                 FinishToken(null);
-                index = _ambigiousPosition++;
-                _ambigiousPosition = -1;
+                index = _ambiguousPosition++;
+                _ambiguousPosition = -1;
             }
         }
 

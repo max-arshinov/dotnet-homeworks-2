@@ -11,5 +11,7 @@ public record NodeOperatorDivision(NodeBase Left, NodeBase Right) : NodeOperator
         return new NodeOperatorDivision(children[0], children[1]);
     }
 
+    public override string ToString() => $"({Left} / {Right})";
+
     public override TokenTypeOperator Operator { get; } = (TokenTypeOperator)TokenTypes.Divide;
 }

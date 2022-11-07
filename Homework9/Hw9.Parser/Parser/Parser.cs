@@ -5,12 +5,12 @@ using Hw9.Parser.Tokens;
 
 namespace Hw9.Parser.Parser;
 
-public class Parser
+public class Parser : IParser
 {
     private TokenPipe _tokenPipe;
     private readonly IParserProvider _parserProvider;
     
-    public IParserProvider ParserProvider => _parserProvider;
+    internal IParserProvider ParserProvider => _parserProvider;
 
     private readonly List<Token> _tokenCache = new();
 
@@ -29,6 +29,9 @@ public class Parser
     internal NodeBase Parse(int priority = 0)
     {
         var token = TakeToken();
+
+        CheckForUnknown(token);
+
         var node = _parserProvider
                        .GetPrefixParser(token.Type)
                        ?.Parse(this, token)
@@ -39,8 +42,7 @@ public class Parser
             token = TakeToken()
                     ?? throw new ParsingError(MathErrorMessager.IncorrectBracketsNumber);
             
-            if(token.Type == TokenTypes.Unknown)
-                throw new ParsingError(MathErrorMessager.UnknownCharacterMessage(token.Value[0]), token);
+            CheckForUnknown(token);
 
             node = (_parserProvider.GetInfixParser(token.Type)
                     ?? throw new InvalidOperationException($"Нет парсера для токена {token.Type}")
@@ -50,13 +52,28 @@ public class Parser
         return node;
     }
 
+    private void CheckForUnknown(Token token)
+    {
+        if (token.Type == TokenTypes.Unknown)
+            throw new ParsingError(MathErrorMessager.UnknownCharacterMessage(token.Value[0]), token);
+    }
+
     public NodeBase Parse(TokenPipe pipe)
     {
         _tokenPipe = pipe;
-        return Parse();
+        _tokenCache.Clear();
+        var result = Parse();
+
+        if (LookAhead() is { } token)
+        {
+            CheckForUnknown(token);
+            throw new ParsingError(MathErrorMessager.IncorrectBracketsNumber, token);
+        }
+
+        return result;
     }
 
-    public int GetPrecedence()
+    internal int GetPrecedence()
     {
         var token = LookAhead();
         return (int)(token == null
@@ -65,12 +82,12 @@ public class Parser
               ?? 0);
     }
 
-    public Token TakeToken(TokenType expectedType)
+    internal Token TakeToken(TokenType expectedType)
         => LookAhead()?.Type != expectedType
             ? throw new InvalidOperationException($"Неожиданный токен {expectedType}, встречен {LookAhead()?.Type}")
             : TakeToken();
 
-    public bool Match(TokenType ex)
+    internal bool Match(TokenType ex)
     {
         if (LookAhead()?.Type == ex)
         {
@@ -81,7 +98,7 @@ public class Parser
         return false;
     }
 
-    public Token TakeToken()
+    internal Token TakeToken()
     {
         LookAhead();
 
@@ -90,7 +107,7 @@ public class Parser
         return res;
     }
 
-    public Token? LookAhead(int fetchCount = 0)
+    internal Token? LookAhead(int fetchCount = 0)
     {
         while (fetchCount >= _tokenCache.Count)
         {

@@ -13,6 +13,8 @@ public class ParserProvider : IParserProvider
             new BinaryOperatorParser(Priority.Addition, (left, right) => new NodeOperatorPlus(left, right)),
         [TokenTypes.Multiply] =
             new BinaryOperatorParser(Priority.Multiplication, (left, right) => new NodeOperatorMultiply(left, right)),
+        [TokenTypes.Divide] =
+            new BinaryOperatorParser(Priority.Multiplication, (left, right) => new NodeOperatorDivision(left, right)),
     };
 
     private Dictionary<TokenType, IPrefixParser> _prefixParser = new()
