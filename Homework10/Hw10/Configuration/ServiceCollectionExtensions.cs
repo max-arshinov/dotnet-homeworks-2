@@ -12,7 +12,7 @@ public static class ServiceCollectionExtensions
 {
     public static IServiceCollection AddMathCalculator(this IServiceCollection services)
     {
-        return services.AddTransient<IMathCalculatorService, MathCalculatorService>()
+        return services.AddTransient<MathCalculatorService>()
             .AddTransient<IParser>(_ => new Parser(new ParserProvider()))
             .AddTransient<ITokenizer, Tokenizer>()
             .AddTransient<IStringToExpression, StringToExpression>();
