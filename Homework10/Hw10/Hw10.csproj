@@ -24,4 +24,8 @@
         <_ContentIncludedByDefault Remove="Views\Home\Index.cshtml" />
         <_ContentIncludedByDefault Remove="Views\Home\Privacy.cshtml" />
     </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Homework9\Hw9.Parser\Hw9.Parser.csproj" />
+    </ItemGroup>
 </Project>
