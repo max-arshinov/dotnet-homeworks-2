@@ -13,13 +13,32 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "actions", "actions", "{82BA
 		.github\coverlet.runsettings = .github\coverlet.runsettings
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Homework11", "Homework11", "{E23FEF3D-D7C9-4FF6-AFB2-2CFF382F35D5}"
+	ProjectSection(SolutionItems) = preProject
+		Homework11\README.md = Homework11\README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hw11Tests", "Homework11\Hw11.Tests\Hw11Tests.csproj", "{B4F60DFD-034F-4205-BC6B-692F276B414B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hw11", "Homework11\Hw11\Hw11.csproj", "{D3503703-6227-4A49-A937-F20DB5BAD636}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B4F60DFD-034F-4205-BC6B-692F276B414B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4F60DFD-034F-4205-BC6B-692F276B414B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4F60DFD-034F-4205-BC6B-692F276B414B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4F60DFD-034F-4205-BC6B-692F276B414B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3503703-6227-4A49-A937-F20DB5BAD636}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3503703-6227-4A49-A937-F20DB5BAD636}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3503703-6227-4A49-A937-F20DB5BAD636}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3503703-6227-4A49-A937-F20DB5BAD636}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{B4F60DFD-034F-4205-BC6B-692F276B414B} = {E23FEF3D-D7C9-4FF6-AFB2-2CFF382F35D5}
+		{D3503703-6227-4A49-A937-F20DB5BAD636} = {E23FEF3D-D7C9-4FF6-AFB2-2CFF382F35D5}
 	EndGlobalSection
 EndGlobal
