@@ -13,25 +13,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "actions", "actions", "{82BA
 		.github\coverlet.runsettings = .github\coverlet.runsettings
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Homework12", "Homework12", "{F76958C8-AD2F-4006-80AF-D7A466020AD3}"
-	ProjectSection(SolutionItems) = preProject
-		Homework12\README.md = Homework12\README.md
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hw12", "Homework12\Hw12\Hw12.csproj", "{93E929A3-EF7A-481E-94C2-47AEB416A7A9}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{93E929A3-EF7A-481E-94C2-47AEB416A7A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{93E929A3-EF7A-481E-94C2-47AEB416A7A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{93E929A3-EF7A-481E-94C2-47AEB416A7A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{93E929A3-EF7A-481E-94C2-47AEB416A7A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{93E929A3-EF7A-481E-94C2-47AEB416A7A9} = {F76958C8-AD2F-4006-80AF-D7A466020AD3}
 	EndGlobalSection
 EndGlobal
