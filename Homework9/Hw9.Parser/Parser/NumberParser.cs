@@ -12,7 +12,7 @@ public class NumberParser : IPrefixParser
         var laToken = parser.LookAhead();
         if (laToken?.Type == TokenTypes.Unknown && laToken.Value.Contains("."))
         {
-            throw new ParsingError(MathErrorMessager.NotNumberMessage($"{token.Value}{laToken.Value}") ,laToken);
+            throw new InvalidNumberError(MathErrorMessager.NotNumberMessage($"{token.Value}{laToken.Value}") ,laToken);
         }
         return new NodeNumber(double.Parse(token.Value));
     }

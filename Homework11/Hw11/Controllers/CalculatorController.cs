@@ -2,6 +2,7 @@ using System.Diagnostics.CodeAnalysis;
 using Hw11.Dto;
 using Hw11.Exceptions;
 using Hw11.Services.MathCalculator;
+using Hw9.ErrorMessages;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Hw11.Controllers;
@@ -29,6 +30,9 @@ public class CalculatorController : Controller
     {
         try
         {
+            if (string.IsNullOrWhiteSpace(expression))
+                return Json(new CalculationMathExpressionResultDto(MathErrorMessager.EmptyString));
+
             var result = await _mathCalculatorService.CalculateMathExpressionAsync(expression);
             return Json(new CalculationMathExpressionResultDto(result));
         }

@@ -15,4 +15,14 @@
       <_ContentIncludedByDefault Remove="Views\Home\Privacy.cshtml" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\..\Homework9\Hw9.Parser\Hw9.Parser.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Update="Views\Calculator\Calculator.cshtml">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+
 </Project>
