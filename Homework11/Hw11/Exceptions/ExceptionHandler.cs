@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using Hw9.Parser.ErrorMessages;
 
 namespace Hw11.Exceptions;
 
@@ -27,17 +28,17 @@ public class ExceptionHandler : IExceptionHandler
 		_logger.LogError($"{UnknownError}: {exception.Message}");
 	}
 
-	private void Handle(InvalidNumberException exception)
+	private void Handle(InvalidNumberError exception)
 	{
 		_logger.LogError($"{InvalidNumber}: {exception.Message}");
 	}
 
-	private void Handle(InvalidSyntaxException exception)
+	private void Handle(InvalidMathSyntaxError exception)
 	{
 		_logger.LogError($"{InvalidSyntax}: {exception.Message}");
 	}
 
-	private void Handle(InvalidSymbolException exception)
+	private void Handle(InvalidMathSymbolError exception)
 	{
 		_logger.LogError($"{InvalidSymbol}: {exception.Message}");
 	}

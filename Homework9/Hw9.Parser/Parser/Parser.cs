@@ -27,12 +27,12 @@ public class Parser : IParser
         var node = _parserProvider
                        .GetPrefixParser(token.Type)
                        ?.Parse(this, token)
-                   ?? throw new ParsingError(MathErrorMessager.StartingWithOperation);
+                   ?? throw new InvalidMathSyntaxError(MathErrorMessager.StartingWithOperation);
 
         while (priority < GetPrecedence())
         {
             token = TakeToken()
-                    ?? throw new ParsingError(MathErrorMessager.IncorrectBracketsNumber);
+                    ?? throw new InvalidMathSyntaxError(MathErrorMessager.IncorrectBracketsNumber);
             
             CheckForUnknown(token);
 
@@ -47,7 +47,7 @@ public class Parser : IParser
     private void CheckForUnknown(Token token)
     {
         if (token.Type == TokenTypes.Unknown)
-            throw new ParsingError(MathErrorMessager.UnknownCharacterMessage(token.Value[0]), token);
+            throw new InvalidMathSymbolError(MathErrorMessager.UnknownCharacterMessage(token.Value[0]), token);
     }
 
     public NodeBase Parse(TokenPipe pipe)
@@ -59,7 +59,7 @@ public class Parser : IParser
         if (LookAhead() is { } token)
         {
             CheckForUnknown(token);
-            throw new ParsingError(MathErrorMessager.IncorrectBracketsNumber, token);
+            throw new InvalidMathSyntaxError(MathErrorMessager.IncorrectBracketsNumber, token);
         }
 
         return result;

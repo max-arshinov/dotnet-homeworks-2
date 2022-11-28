@@ -15,16 +15,16 @@ public class BraceParser : IPrefixParser
         {
             var node = parser.Parse();
             if (!parser.Match(TokenTypes.BraceClose))
-                throw new ParsingError(MathErrorMessager.IncorrectBracketsNumber);
+                throw new InvalidMathSyntaxError(MathErrorMessager.IncorrectBracketsNumber);
 
             return node;
         }
         catch (ParsingError e)
         {
             if (e.Message == MathErrorMessager.StartingWithOperation)
-                throw new ParsingError(MathErrorMessager.InvalidOperatorAfterParenthesisMessage(laNode!.Value), laNode);
+                throw new InvalidMathSyntaxError(MathErrorMessager.InvalidOperatorAfterParenthesisMessage(laNode!.Value), laNode);
             if (e.Message == MathErrorMessager.EndingWithOperation)
-                throw new ParsingError(MathErrorMessager.OperationBeforeParenthesisMessage(e.ErrorAt?.Value!),
+                throw new InvalidMathSyntaxError(MathErrorMessager.OperationBeforeParenthesisMessage(e.ErrorAt?.Value!),
                     e.ErrorAt);
             throw;
         }

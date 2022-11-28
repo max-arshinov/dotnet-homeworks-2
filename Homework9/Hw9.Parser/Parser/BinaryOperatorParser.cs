@@ -21,7 +21,7 @@ public class BinaryOperatorParser: IInfixParser
         var laNode = parser.LookAhead();
         
         if (laNode is null)
-            throw new ParsingError(MathErrorMessager.EndingWithOperation, token);
+            throw new InvalidMathSyntaxError(MathErrorMessager.EndingWithOperation, token);
 
         try
         {
@@ -31,8 +31,8 @@ public class BinaryOperatorParser: IInfixParser
             when (e.Message == MathErrorMessager.StartingWithOperation)
         {
             if(laNode.Type == TokenTypes.BraceClose)
-                throw new ParsingError(MathErrorMessager.OperationBeforeParenthesisMessage(token.Value), token);
-            throw new ParsingError(MathErrorMessager.TwoOperationInRowMessage(token.Value, laNode.Value), token);
+                throw new InvalidMathSyntaxError(MathErrorMessager.OperationBeforeParenthesisMessage(token.Value), token);
+            throw new InvalidMathSyntaxError(MathErrorMessager.TwoOperationInRowMessage(token.Value, laNode.Value), token);
         }
     }
 }
