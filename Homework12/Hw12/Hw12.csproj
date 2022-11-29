@@ -12,4 +12,9 @@
       <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="6.0.11" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\..\Homework6\Hw6\Hw6.fsproj" />
+      <ProjectReference Include="..\..\Homework8\Hw8\Hw8.csproj" />
+    </ItemGroup>
+
 </Project>
